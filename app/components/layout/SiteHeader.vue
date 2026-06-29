@@ -82,6 +82,25 @@ const supportItems = [
 const closeMobile = () => {
   isMobileOpen.value = false
 }
+
+const toggleMobile = () => {
+  isSearchOpen.value = false
+  isMobileOpen.value = !isMobileOpen.value
+}
+
+watch(isMobileOpen, (open) => {
+  if (!import.meta.client) {
+    return
+  }
+
+  document.body.style.overflow = open ? 'hidden' : ''
+})
+
+onBeforeUnmount(() => {
+  if (import.meta.client) {
+    document.body.style.overflow = ''
+  }
+})
 </script>
 
 <template>
@@ -96,7 +115,7 @@ const closeMobile = () => {
       <div class="mx-auto flex h-[88px] max-w-7xl items-center px-4 sm:px-6 lg:px-8">
         <NuxtLink
           to="/"
-          class="flex h-full w-[260px] shrink-0 items-center sm:w-[405px]"
+          class="flex h-full w-[180px] shrink-0 items-center sm:w-[260px] xl:w-[405px]"
           title="Verified Peptides - Verified Pure Peptides"
           aria-label="Verified Peptides home"
           @click="closeMobile"
@@ -193,7 +212,7 @@ const closeMobile = () => {
           </NuxtLink>
         </nav>
 
-        <div class="ml-auto flex items-center gap-3 xl:hidden">
+        <div class="ml-auto flex items-center gap-1 sm:gap-3 xl:hidden">
           <button class="flex size-10 items-center justify-center text-ink-900" type="button" aria-label="Search" @click="isSearchOpen = !isSearchOpen">
             <svg class="size-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
               <path d="m21 21-4.35-4.35m2.35-5.15a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
@@ -210,9 +229,9 @@ const closeMobile = () => {
             class="flex size-10 items-center justify-center text-ink-900"
             type="button"
             :aria-expanded="isMobileOpen"
-            aria-controls="main-menu"
+            aria-controls="mobile-menu-drawer"
             aria-label="Menu"
-            @click="isMobileOpen = !isMobileOpen"
+            @click="toggleMobile"
           >
             <span class="h-0.5 w-6 bg-current shadow-[0_7px_0_currentColor,0_-7px_0_currentColor]" />
           </button>
@@ -227,15 +246,88 @@ const closeMobile = () => {
         </form>
       </div>
 
-      <div v-if="isMobileOpen" id="main-menu" class="border-t border-line bg-white xl:hidden">
-        <nav class="mx-auto grid max-w-7xl gap-1 px-4 py-3" aria-label="Mobile navigation">
-          <NuxtLink to="/" class="mobile-link" @click="closeMobile">Home</NuxtLink>
-          <NuxtLink to="/products" class="mobile-link" @click="closeMobile">Peptides</NuxtLink>
-          <NuxtLink to="/reports" class="mobile-link" @click="closeMobile">Lab Tests</NuxtLink>
-          <NuxtLink to="/faq" class="mobile-link" @click="closeMobile">FAQ</NuxtLink>
-          <NuxtLink to="/contact" class="mobile-link" @click="closeMobile">Support</NuxtLink>
-        </nav>
-      </div>
+      <Transition name="mobile-menu-fade">
+        <div
+          v-if="isMobileOpen"
+          class="fixed inset-0 z-[70] bg-black/45 xl:hidden"
+          aria-hidden="true"
+          @click="closeMobile"
+        />
+      </Transition>
+
+      <Transition name="mobile-menu-slide">
+        <aside
+          v-if="isMobileOpen"
+          id="mobile-menu-drawer"
+          class="fixed bottom-0 right-0 top-0 z-[80] flex w-[min(88vw,390px)] flex-col bg-white shadow-2xl xl:hidden"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Mobile navigation"
+          tabindex="0"
+          @click.stop
+          @keydown.esc="closeMobile"
+        >
+          <div class="flex min-h-[74px] items-center justify-between border-b border-line px-5">
+            <NuxtLink to="/" class="flex max-w-[230px] items-center" aria-label="Verified Peptides home" @click="closeMobile">
+              <img
+                src="https://verifiedpeptides.com/wp-content/uploads/2023/11/vplogowithvialfront-1.jpg"
+                alt="Verified Peptides"
+                class="max-h-[58px] w-full object-contain object-left"
+              >
+            </NuxtLink>
+            <button
+              class="flex size-10 items-center justify-center rounded-full border border-line text-ink-900 transition hover:bg-brand-50 hover:text-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-600"
+              type="button"
+              aria-label="Close menu"
+              @click="closeMobile"
+            >
+              <svg class="size-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="m18 6-12 12M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </button>
+          </div>
+
+          <div class="flex-1 overflow-y-auto px-5 py-5">
+            <nav class="grid gap-1" aria-label="Mobile primary navigation">
+              <NuxtLink to="/" class="mobile-link" @click="closeMobile">Home</NuxtLink>
+              <NuxtLink to="/products" class="mobile-link" @click="closeMobile">Peptides</NuxtLink>
+              <NuxtLink to="/reports" class="mobile-link" @click="closeMobile">Lab Tests</NuxtLink>
+              <NuxtLink to="/faq" class="mobile-link" @click="closeMobile">FAQ</NuxtLink>
+              <NuxtLink to="/order" class="mobile-link" @click="closeMobile">My Account / Cart</NuxtLink>
+            </nav>
+
+            <div class="mt-6 border-t border-line pt-5">
+              <p class="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-ink-700">Peptide Categories</p>
+              <div class="grid gap-1">
+                <NuxtLink
+                  v-for="tab in peptideTabs"
+                  :key="tab.label"
+                  to="/products"
+                  class="mobile-link text-[13px]"
+                  @click="closeMobile"
+                >
+                  {{ tab.label }}
+                </NuxtLink>
+              </div>
+            </div>
+
+            <div class="mt-6 border-t border-line pt-5">
+              <p class="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-ink-700">Support</p>
+              <div class="grid gap-1">
+                <NuxtLink
+                  v-for="item in supportItems"
+                  :key="item.label"
+                  :to="item.to"
+                  class="mobile-link text-[13px]"
+                  @click="closeMobile"
+                >
+                  {{ item.label }}
+                </NuxtLink>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </Transition>
     </div>
   </header>
 </template>
@@ -267,5 +359,34 @@ const closeMobile = () => {
 .mobile-link:hover {
   background: #eef7ff;
   color: #1e73be;
+}
+
+.mobile-menu-fade-enter-active,
+.mobile-menu-fade-leave-active {
+  transition: opacity 180ms ease;
+}
+
+.mobile-menu-fade-enter-from,
+.mobile-menu-fade-leave-to {
+  opacity: 0;
+}
+
+.mobile-menu-slide-enter-active,
+.mobile-menu-slide-leave-active {
+  transition: transform 240ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.mobile-menu-slide-enter-from,
+.mobile-menu-slide-leave-to {
+  transform: translateX(100%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mobile-menu-fade-enter-active,
+  .mobile-menu-fade-leave-active,
+  .mobile-menu-slide-enter-active,
+  .mobile-menu-slide-leave-active {
+    transition: none;
+  }
 }
 </style>
