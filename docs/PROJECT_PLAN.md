@@ -104,7 +104,7 @@ CMD ["node", ".output/server/index.mjs"]
 
 - 框架：Nuxt 4.4.8
 - Vue：Vue 3.5+
-- 构建工具：Vite 8+
+- 构建工具：Vite 7.x，使用 Nuxt 4.4.8 兼容版本，不强制升级到 Vite 8
 - 语言：TypeScript
 - 样式：Tailwind CSS 4.3.0，视觉风格保持医疗、实验室、专业可信
 - 动画：CSS/Tailwind 过渡为主，GSAP 用于复杂滚动动画，IntersectionObserver 用于进入视口触发动画
@@ -303,9 +303,6 @@ interface Product {
 参考以下网站的信息结构和交互思路，但不直接复制视觉设计、文案、图片或品牌资产：
 
 - https://verifiedpeptides.com/
-- https://janoshik.com/
-- https://norcopeptide.com/
-- https://www.owppt.com
 
 ## 8. 合规要求
 
@@ -321,7 +318,7 @@ interface Product {
 ### 阶段 1 - 项目基础
 
 - [ ] 初始化 Nuxt 4.4.8 + Vue 3.5+ + TypeScript 项目。
-- [ ] 配置 Vite 8+ 和 Tailwind CSS 4.3.0。
+- [ ] 配置 Nuxt 4.4.8 兼容的 Vite 7.x 和 Tailwind CSS 4.3.0。
 - [ ] 建立统一动画规范：页面切换、加载状态、进入视口动画、滚动动画、减少动态效果模式。
 - [ ] 添加 ESLint、Prettier、类型检查和 package scripts。
 - [ ] 配置 API base URL、站点 URL、CDN URL 等运行时环境变量。
@@ -503,7 +500,7 @@ interface Product {
 
 - Vue 3.5+ Composition API
 - Nuxt 4.4.8 SSR 和 Nitro 部署
-- Vite 8+
+- Vite 7.x
 - Tailwind CSS 4.3.0
 - CSS 动画、Nuxt 页面过渡、IntersectionObserver、GSAP 基础使用
 - TypeScript

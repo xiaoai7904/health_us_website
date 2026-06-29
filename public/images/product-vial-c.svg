@@ -1,0 +1,8 @@
+<svg width="720" height="720" viewBox="0 0 720 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="720" height="720" fill="#f7f8fb"/>
+  <rect x="250" y="102" width="220" height="74" rx="18" fill="#e4e7ec"/>
+  <rect x="276" y="160" width="168" height="410" rx="44" fill="#ffffff" stroke="#7c3aed" stroke-width="10"/>
+  <rect x="300" y="284" width="120" height="138" rx="18" fill="#f0eaff"/>
+  <circle cx="360" cy="352" r="34" fill="#7c3aed"/>
+  <text x="360" y="474" text-anchor="middle" font-family="Arial" font-size="32" font-weight="700" fill="#4c1d95">GHK-Cu</text>
+</svg>

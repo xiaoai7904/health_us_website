@@ -1,0 +1,323 @@
+  @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;600&display=swap');
+ 
+  #gsh-article {
+    --gsh-ink: #1a1a2e;
+    --gsh-ink-muted: #4a4a6a;
+    --gsh-ink-light: #8a8aaa;
+    --gsh-surface: #fafaf8;
+    --gsh-surface-alt: #f2f0eb;
+    --gsh-accent: #2d6a4f;
+    --gsh-accent-light: #52b788;
+    --gsh-accent-pale: #d8f3dc;
+    --gsh-gold: #b7791f;
+    --gsh-gold-pale: #fef3c7;
+    --gsh-border: #e0ddd6;
+    --gsh-red-pale: #fee2e2;
+    --gsh-red: #991b1b;
+    box-sizing: border-box;
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 1.75;
+    color: var(--gsh-ink);
+    background: var(--gsh-surface);
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 48px 28px 80px;
+  }
+ 
+  #gsh-article *, #gsh-article *::before, #gsh-article *::after {
+    box-sizing: border-box;
+  }
+ 
+  /* Header */
+  #gsh-article .gsh-article-header {
+    border-bottom: 2px solid var(--gsh-accent);
+    padding-bottom: 32px;
+    margin-bottom: 48px;
+  }
+  #gsh-article .gsh-article-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gsh-accent);
+    margin-bottom: 16px;
+  }
+  #gsh-article h2 {
+    font-family: 'Lora', serif;
+    font-size: 2.4rem;
+    font-weight: 600;
+    line-height: 1.25;
+    color: var(--gsh-ink);
+    margin-bottom: 16px;
+    margin-top: 0;
+  }
+  #gsh-article .gsh-article-meta {
+    font-size: 13px;
+    color: var(--gsh-ink-muted);
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  #gsh-article .gsh-article-meta span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+ 
+  /* Lead paragraph */
+  #gsh-article .gsh-lead {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--gsh-ink-muted);
+    border-left: 3px solid var(--gsh-accent-light);
+    padding-left: 18px;
+    margin-bottom: 48px;
+    font-style: italic;
+  }
+ 
+  /* Headings */
+  #gsh-article h3 {
+    font-family: 'Lora', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--gsh-ink);
+    margin-top: 52px;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--gsh-border);
+  }
+  #gsh-article h4 {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--gsh-accent);
+    margin-top: 28px;
+    margin-bottom: 8px;
+    letter-spacing: 0.02em;
+  }
+ 
+  #gsh-article p {
+    margin-bottom: 18px;
+    margin-top: 0;
+  }
+ 
+  /* Keyword highlight */
+  #gsh-article .gsh-kw {
+    background: var(--gsh-accent-pale);
+    color: var(--gsh-accent);
+    font-weight: 600;
+    padding: 1px 4px;
+    border-radius: 3px;
+    font-size: 0.95em;
+  }
+ 
+  /* Info boxes */
+  #gsh-article .gsh-info-box {
+    background: var(--gsh-surface-alt);
+    border: 1px solid var(--gsh-border);
+    border-left: 4px solid var(--gsh-accent);
+    border-radius: 6px;
+    padding: 20px 24px;
+    margin: 28px 0;
+  }
+  #gsh-article .gsh-info-box.gsh-gold {
+    border-left-color: var(--gsh-gold);
+    background: var(--gsh-gold-pale);
+  }
+  #gsh-article .gsh-info-box.gsh-red {
+    border-left-color: var(--gsh-red);
+    background: var(--gsh-red-pale);
+  }
+  #gsh-article .gsh-info-box p:last-child { margin-bottom: 0; }
+  #gsh-article .gsh-info-box-title {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gsh-ink-muted);
+    margin-bottom: 10px;
+  }
+ 
+  /* Data table */
+  #gsh-article .gsh-data-table-wrap { overflow-x: auto; margin: 28px 0; }
+  #gsh-article table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  #gsh-article th {
+    background: var(--gsh-ink);
+    color: #fff;
+    font-weight: 600;
+    text-align: left;
+    padding: 10px 14px;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+  }
+  #gsh-article td {
+    padding: 9px 14px;
+    border-bottom: 1px solid var(--gsh-border);
+    vertical-align: top;
+  }
+  #gsh-article tr:nth-child(even) td { background: var(--gsh-surface-alt); }
+  #gsh-article .gsh-sig { color: var(--gsh-accent); font-weight: 600; }
+  #gsh-article .gsh-ns { color: var(--gsh-ink-light); }
+ 
+  /* Finding cards */
+  #gsh-article .gsh-findings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 14px;
+    margin: 28px 0;
+  }
+  #gsh-article .gsh-finding-card {
+    background: #fff;
+    border: 1px solid var(--gsh-border);
+    border-radius: 8px;
+    padding: 16px 18px;
+  }
+  #gsh-article .gsh-finding-card .gsh-arrow {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  #gsh-article .gsh-finding-card .gsh-arrow.gsh-down { color: var(--gsh-accent); }
+  #gsh-article .gsh-finding-card .gsh-arrow.gsh-up { color: #1d4ed8; }
+  #gsh-article .gsh-finding-card .gsh-arrow.gsh-neutral { color: var(--gsh-ink-light); }
+  #gsh-article .gsh-finding-card .gsh-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--gsh-ink);
+    margin-bottom: 2px;
+  }
+  #gsh-article .gsh-finding-card .gsh-detail {
+    font-size: 12px;
+    color: var(--gsh-ink-muted);
+  }
+ 
+  /* FAQ */
+  #gsh-article .gsh-faq-section {
+    margin-top: 60px;
+    border-top: 2px solid var(--gsh-border);
+    padding-top: 40px;
+  }
+  #gsh-article .gsh-faq-section h2 { margin-top: 0; }
+  #gsh-article .gsh-faq-item {
+    border-bottom: 1px solid var(--gsh-border);
+    padding: 20px 0;
+  }
+  #gsh-article .gsh-faq-item:last-child { border-bottom: none; }
+  #gsh-article .gsh-faq-q {
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--gsh-ink);
+    margin-bottom: 10px;
+  }
+  #gsh-article .gsh-faq-a {
+    font-size: 15px;
+    color: var(--gsh-ink-muted);
+    line-height: 1.7;
+  }
+ 
+  /* Disclaimer */
+  #gsh-article .gsh-disclaimer {
+    margin-top: 56px;
+    background: var(--gsh-red-pale);
+    border: 1px solid #fca5a5;
+    border-radius: 8px;
+    padding: 20px 24px;
+    font-size: 13px;
+    color: #7f1d1d;
+    line-height: 1.6;
+  }
+  #gsh-article .gsh-disclaimer strong { color: var(--gsh-red); }
+ 
+  /* Citation */
+  #gsh-article .gsh-citation {
+    margin-top: 36px;
+    font-size: 13px;
+    color: var(--gsh-ink-muted);
+    border-top: 1px solid var(--gsh-border);
+    padding-top: 20px;
+    font-style: italic;
+  }
+ 
+  /* Accordion toggle */
+  #gsh-article .gsh-toggle-btn {
+    width: 100%;
+    background: var(--gsh-surface);
+    border: 2px solid var(--gsh-accent);
+    border-radius: 10px;
+    padding: 20px 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    text-align: left;
+    transition: background 0.2s ease;
+    font-family: inherit;
+  }
+  #gsh-article .gsh-toggle-btn:hover {
+    background: var(--gsh-accent-pale);
+  }
+  #gsh-article .gsh-toggle-label {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  #gsh-article .gsh-toggle-eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gsh-accent);
+  }
+  #gsh-article .gsh-toggle-title {
+    font-family: 'Lora', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--gsh-ink);
+  }
+  #gsh-article .gsh-toggle-icon {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--gsh-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+  }
+  #gsh-article .gsh-toggle-icon svg {
+    display: block;
+    transition: transform 0.3s ease;
+  }
+  #gsh-article.gsh-open .gsh-toggle-icon svg {
+    transform: rotate(180deg);
+  }
+  #gsh-article .gsh-toggle-btn:hover .gsh-toggle-icon {
+    background: var(--gsh-accent-light);
+  }
+ 
+  /* Collapsible body */
+  #gsh-article .gsh-body {
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.35s ease;
+  }
+  #gsh-article.gsh-open .gsh-body {
+    max-height: 99999px;
+    opacity: 1;
+  }
+  #gsh-article .gsh-body-inner {
+    padding-top: 12px;
+  }

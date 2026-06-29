@@ -1,0 +1,57 @@
+/*
+Theme Name: flatsome-child
+Description: This is a child theme for Flatsome Theme
+Author: UX Themes
+Template: flatsome
+Version: 3.0
+*/
+
+/*************** ADD CUSTOM CSS HERE.   ***************/
+
+
+@media only screen and (max-width: 48em) {
+/*************** ADD MOBILE ONLY CSS HERE  ***************/
+
+
+}
+
+/*************** STICKY SIDE BUTTON ***************/
+
+.button:not(.icon).sticky-side-button {
+  	right: 5px; /* Negative Margin Right - Change Accordingly  */
+    float: right;
+	position: fixed;
+	top: calc(50% - 47px);
+    z-index:1;
+	height: 125px;
+	width: 125px;
+    cursor: pointer;
+    border-radius:0px !important;
+    margin:0px;
+}
+
+.button:not(.icon).sticky-footer-button {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    border-radius:0px !important;
+    margin-bottom: 0em;
+}
+
+/*************** POPUP: PERSONAL ***************/
+
+.popup-personal img {
+    border-radius:99px; 
+    border: 5px solid #fff;
+    width:120px;
+    height:120px;
+}
+
+.popup-personal .col-inner {
+     margin-top:-80px;
+}
+
+.lightbox-content {
+    border-radius:5px; 
+}

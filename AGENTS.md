@@ -6,7 +6,7 @@
 
 核心目标：构建一个响应式公开网站，用于产品展示、证书展示、测试报告展示、企业信任内容、联系我们、问题反馈、订购提交和新闻发布。
 
-推荐实现：Vue 3.5+ + Nuxt 4.4.8 SSR + Vite 8+ + Tailwind CSS 4.3.0 + TypeScript。
+推荐实现：Vue 3.5+ + Nuxt 4.4.8 SSR + Vite 7 + Tailwind CSS 4.3.0 + TypeScript。
 
 ## 核心页面
 
@@ -33,7 +33,7 @@
 - 本项目固定采用 SSR，不实现 SPA 版本。
 - 不使用纯客户端渲染作为主要页面渲染方式。
 - Vue 版本使用 3.5+。
-- Vite 版本使用 8+。
+- Vite 使用 Nuxt 4.4.8 兼容的 7.x 版本，不强制升级到 Vite 8。
 - Tailwind CSS 版本使用 4.3.0。
 - 动画默认使用 CSS/Tailwind transition 和 keyframes。
 - 复杂滚动动画可以使用 GSAP + ScrollTrigger，但必须客户端动态导入。

@@ -1,0 +1,15 @@
+        // Accordion functionality
+        const accordion = document.querySelector('.research-studies-accordion');
+        const accordionHeader = document.querySelector('.research-studies-accordion-header');
+        const closeButton = document.querySelector('.research-studies-close-button');
+
+        accordionHeader.addEventListener('click', function() {
+            accordion.classList.toggle('active');
+        });
+
+        closeButton.addEventListener('click', function() {
+            accordion.classList.remove('active');
+            // Scroll back to the accordion header
+            accordionHeader.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    

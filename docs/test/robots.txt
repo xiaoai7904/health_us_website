@@ -1,0 +1,53 @@
+User-agent: *
+Disallow: /wp-content/uploads/wc-logs/
+Disallow: /wp-content/uploads/woocommerce_transient_files/
+Disallow: /wp-content/uploads/woocommerce_uploads/
+Disallow: /wp-admin/
+Allow: /wp-admin/admin-ajax.php
+
+# START YOAST BLOCK
+# ---------------------------
+User-agent: *
+Disallow:
+
+Sitemap: https://verifiedpeptides.com/sitemap_index.xml
+
+# Claude (Anthropic)
+User-agent: Claude-User
+Disallow:
+
+# ChatGPT
+User-agent: ChatGPT-User
+Disallow:
+
+# Perplexity
+User-agent: Perplexity-User
+Disallow:
+
+# OpenAI Search Bot (used for link previews in ChatGPT)
+User-agent: OAI-SearchBot
+Allow: /
+
+# Google (Gemini, Bard)
+User-agent: Google-Extended
+Allow: /
+
+# Microsoft (Bing, Copilot)
+User-agent: BingBot
+Allow: /
+
+# Apple
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Meta (Facebook, Threads, Instagram)
+User-agent: FacebookBot
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+# ---------------------------
+# END YOAST BLOCK

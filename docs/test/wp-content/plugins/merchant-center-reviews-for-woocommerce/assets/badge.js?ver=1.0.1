@@ -1,0 +1,40 @@
+/**
+ * badge.js
+ * Renders the inline Google Customer Reviews badge.
+ * Data is passed via the localized object: brumigmcreviewBadgeData.
+ */
+(function() {
+    if (typeof brumigmcreviewBadgeData === 'undefined') {
+      console.error('brumigmcreviewBadgeData is not defined.');
+      return;
+    }
+  
+    function renderBadge() {
+      if (typeof gapi === 'undefined') {
+        console.error('Google API is not loaded.');
+        return;
+      }
+      // Load the "ratingbadge" module per the integration guide.
+      gapi.load('ratingbadge', function() {
+        // Try to find an existing container; if not found, create one.
+        var ratingBadgeContainer = document.getElementById("gmc-badge");
+        if (!ratingBadgeContainer) {
+          ratingBadgeContainer = document.createElement("div");
+          ratingBadgeContainer.id = "gmc-badge";
+          document.body.appendChild(ratingBadgeContainer);
+        }
+        // Render the badge using the ratingbadge module.
+        window.gapi.ratingbadge.render(ratingBadgeContainer, {
+          merchant_id: brumigmcreviewBadgeData.merchant_id,
+          position: brumigmcreviewBadgeData.position
+        });
+      });
+    }
+  
+    if (document.readyState === 'complete' || document.readyState === 'interactive') {
+      renderBadge();
+    } else {
+      document.addEventListener('DOMContentLoaded', renderBadge);
+    }
+  })();
+  
