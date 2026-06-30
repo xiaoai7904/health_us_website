@@ -33,6 +33,9 @@ export default defineNuxtConfig({
     plugins: [tailwindVitePlugin]
   },
   nitro: {
+    prerender: {
+      autoSubfolderIndex: false
+    },
     routeRules: isDev
       ? {}
       : {
