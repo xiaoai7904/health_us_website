@@ -1,5 +1,7 @@
 import tailwindcss from '@tailwindcss/vite'
 
+const isDev = process.env.NODE_ENV === 'development'
+
 export default defineNuxtConfig({
   compatibilityDate: '2026-06-29',
   devtools: { enabled: true },
@@ -29,13 +31,15 @@ export default defineNuxtConfig({
     plugins: [tailwindcss()]
   },
   nitro: {
-    routeRules: {
-      '/': { swr: 300 },
-      '/products/**': { swr: 300 },
-      '/news/**': { swr: 600 },
-      '/api/products/**': { swr: 300 },
-      '/api/news/**': { swr: 600 }
-    }
+    routeRules: isDev
+      ? {}
+      : {
+          '/': { swr: 300 },
+          '/products/**': { swr: 300 },
+          '/news/**': { swr: 600 },
+          '/api/products/**': { swr: 300 },
+          '/api/news/**': { swr: 600 }
+        }
   },
   typescript: {
     strict: true,

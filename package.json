@@ -5,6 +5,7 @@
   "packageManager": "pnpm@11.7.0",
   "scripts": {
     "dev": "nuxt dev --port 5555",
+    "dev:0": "nuxt dev --host 0.0.0.0 --port 5555",
     "build": "nuxt build",
     "preview": "nuxt preview --port 5555",
     "generate": "nuxt generate",

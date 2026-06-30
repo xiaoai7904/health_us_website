@@ -174,14 +174,14 @@ useReveal()
                 <input
                   id="newsletter-email"
                   v-model="newsletterEmail"
-                  class="h-12 min-w-0 flex-1 border border-[#ddd] bg-white px-4 text-[15px] outline-none transition focus:border-brand-600 focus:ring-2 focus:ring-brand-600/15"
+                  class="min-h-14 min-w-0 flex-1 border border-[#ddd] bg-white px-4 text-[16px] outline-none transition focus:border-brand-600 focus:ring-2 focus:ring-brand-600/15 sm:min-h-12 sm:text-[15px]"
                   type="email"
                   name="your-email"
                   placeholder="Email"
                   required
                 >
                 <button
-                  class="h-12 bg-brand-600 px-7 text-[13px] font-semibold uppercase text-white transition hover:bg-brand-700"
+                  class="min-h-14 bg-brand-600 px-7 text-[13px] font-semibold uppercase text-white transition hover:bg-brand-700 sm:min-h-12"
                   type="submit"
                 >
                   Submit
