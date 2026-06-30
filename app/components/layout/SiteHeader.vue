@@ -5,6 +5,7 @@ const isSearchOpen = ref(false)
 const navItems = [
   { label: 'HOME', to: '/' },
   { label: 'product', to: '/products' },
+  { label: 'blog', to: '/blog' },
   { label: 'faq', to: '/faq' },
   { label: 'about us', to: '/about' },
   { label: 'contace us', to: '/contact' }

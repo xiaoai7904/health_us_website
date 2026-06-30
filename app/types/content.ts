@@ -66,3 +66,25 @@ export interface NewsArticle {
   category: string
   publishedAt: string
 }
+
+export interface BlogHeading {
+  id: string
+  level: 2 | 3
+  text: string
+}
+
+export interface BlogPost {
+  id: string
+  slug: string
+  title: string
+  category: string
+  categorySlug: string
+  day: string
+  month: string
+  publishedAt: string
+  updatedAt: string
+  image: string
+  imageAlt: string
+  excerpt: string
+  contentHtml: string
+}

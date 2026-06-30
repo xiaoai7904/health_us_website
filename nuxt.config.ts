@@ -1,6 +1,8 @@
 import tailwindcss from '@tailwindcss/vite'
+import type { PluginOption } from 'vite'
 
 const isDev = process.env.NODE_ENV === 'development'
+const tailwindVitePlugin = tailwindcss() as PluginOption
 
 export default defineNuxtConfig({
   compatibilityDate: '2026-06-29',
@@ -28,7 +30,7 @@ export default defineNuxtConfig({
     }
   },
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [tailwindVitePlugin]
   },
   nitro: {
     routeRules: isDev
@@ -36,6 +38,7 @@ export default defineNuxtConfig({
       : {
           '/': { swr: 300 },
           '/products/**': { swr: 300 },
+          '/blog/**': { swr: 600 },
           '/news/**': { swr: 600 },
           '/api/products/**': { swr: 300 },
           '/api/news/**': { swr: 600 }
