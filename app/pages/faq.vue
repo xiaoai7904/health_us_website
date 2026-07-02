@@ -18,6 +18,9 @@ interface FaqItem {
   content: FaqContent[]
 }
 
+const config = useRuntimeConfig()
+const siteUrl = config.public.siteUrl.replace(/\/$/, '')
+
 useSeoMeta({
   title: 'FAQ | Health US',
   description: 'Frequently asked questions about peptide products, purity, packaging, shipping, payment, and support.'
@@ -27,7 +30,7 @@ useHead({
   link: [
     {
       rel: 'canonical',
-      href: 'https://norcopeptide.com/faq/'
+      href: `${siteUrl}/faq`
     }
   ]
 })

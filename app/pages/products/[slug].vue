@@ -22,6 +22,8 @@ interface SpecRow {
 }
 
 const { data } = await useFetch<{ items: Product[] }>('/api/products')
+const config = useRuntimeConfig()
+const siteUrl = config.public.siteUrl.replace(/\/$/, '')
 
 const productName = '5-Amino 1MQ Peptide (50MG)'
 const activeImage = ref(productImageOne)
@@ -152,7 +154,7 @@ useSeoMeta({
 })
 
 useHead({
-  link: [{ rel: 'canonical', href: 'https://verifiedpeptides.com/product/5-amino-1mq/' }]
+  link: [{ rel: 'canonical', href: `${siteUrl}/products/5-amino-1mq` }]
 })
 
 useReveal()

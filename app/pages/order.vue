@@ -148,7 +148,7 @@ useReveal()
       </div>
     </main> -->
 
-    <section id="section_1296386165" class="bg-white/85 py-40">
+    <section id="section_1296386165" class="bg-white/85 py-40 min-h-[70vh]">
       <div class="section-content relative mx-auto max-w-[1080px] px-4 text-center sm:px-6 lg:px-8">
         <div class="row align-equal align-center">
           <div class="col small-12 large-12">
@@ -168,20 +168,20 @@ useReveal()
           </div>
 
           <div class="col small-12 large-12 mt-6">
-            <div class="col-inner text-center">
+            <div class="col-inner text-center mt-15">
               <form class="mx-auto flex max-w-[760px] flex-col gap-3 sm:flex-row" aria-label="Contact form" @submit.prevent="submitNewsletter">
                 <label for="newsletter-email" class="sr-only">Email</label>
                 <input
                   id="newsletter-email"
                   v-model="newsletterEmail"
-                  class="min-h-14 min-w-0 flex-1 border border-[#ddd] bg-white px-4 text-[16px] outline-none transition focus:border-brand-600 focus:ring-2 focus:ring-brand-600/15 sm:min-h-12 sm:text-[15px]"
+                  class="min-h-14 min-w-0 flex-1 rounded-[8px] border border-[#ddd] bg-white px-4 text-[16px] outline-none transition focus:border-brand-600 focus:ring-2 focus:ring-brand-600/15 sm:min-h-12 sm:text-[15px]"
                   type="email"
                   name="your-email"
                   placeholder="Email"
                   required
                 >
                 <button
-                  class="min-h-14 bg-brand-600 px-7 text-[13px] font-semibold uppercase text-white transition hover:bg-brand-700 sm:min-h-12"
+                  class="min-h-14 rounded-[8px] bg-brand-600 px-7 text-[13px] font-semibold uppercase text-white transition hover:bg-brand-700 sm:min-h-12"
                   type="submit"
                 >
                   Submit

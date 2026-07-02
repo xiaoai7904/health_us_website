@@ -5,6 +5,9 @@ interface ContactMethod {
   href: string
 }
 
+const config = useRuntimeConfig()
+const siteUrl = config.public.siteUrl.replace(/\/$/, '')
+
 useSeoMeta({
   title: 'Contact US | Health US',
   description: 'Contact the support team for peptide product questions, order support, and documentation requests.'
@@ -14,7 +17,7 @@ useHead({
   link: [
     {
       rel: 'canonical',
-      href: 'https://norcopeptide.com/contact-us/'
+      href: `${siteUrl}/contact`
     }
   ]
 })

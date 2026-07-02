@@ -74,7 +74,7 @@ useReveal()
           {{ currentPost.category }}
         </NuxtLink>
 
-        <h1 class="mx-auto mt-5 max-w-4xl text-[34px] font-semibold leading-tight sm:text-[44px]">
+        <h1 class="mx-auto mt-5 max-w-4xl text-[34px] font-semibold leading-tight sm:text-[44px] text-white!">
           {{ currentPost.title }}
         </h1>
 

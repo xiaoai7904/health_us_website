@@ -191,10 +191,10 @@ useReveal()
             <article
               v-for="product in products"
               :key="product.name"
-              class="vp-product-card col-inner bg-white transition duration-200"
+              class="vp-product-card col-inner flex h-full flex-col rounded-[8px] bg-white transition duration-200"
             >
-              <div class="product-small box">
-                <NuxtLink :to="product.href" class="vp-product-image image-zoom block overflow-hidden bg-white">
+              <div class="product-small box flex h-full flex-col">
+                <NuxtLink :to="product.href" class="vp-product-image image-zoom block overflow-hidden rounded-t-[8px] bg-white">
                   <img
                     :src="product.image"
                     :alt="product.alt"
@@ -203,7 +203,7 @@ useReveal()
                   >
                 </NuxtLink>
 
-                <div class="box-text box-text-products grid-style-2 px-3 pb-4 pt-3 text-center">
+                <div class="box-text box-text-products grid-style-2 flex flex-1 flex-col px-3 pb-4 pt-3 text-center">
                   <p class="category product-cat no-text-overflow mb-1 text-[11px] font-medium uppercase tracking-wide text-ink-700 opacity-80">
                     Peptides
                   </p>
@@ -213,7 +213,7 @@ useReveal()
                   <div class="price-wrapper mt-2">
                     <span class="price text-[15px] font-semibold text-ink-900">{{ product.price }}</span>
                   </div>
-                  <div class="add-to-cart-button mt-3">
+                  <div class="add-to-cart-button mt-auto">
                     <NuxtLink
                       :to="product.href"
                       class="button is-outline inline-flex min-h-8 items-center justify-center rounded border border-brand-600 px-3 py-1.5 text-[11px] font-semibold uppercase text-brand-600 transition hover:bg-brand-600 hover:text-white"

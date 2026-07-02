@@ -276,6 +276,8 @@ const toggleReport = (id: string) => {
 }
 
 const isOpen = (id: string) => openReports.value.has(id)
+const config = useRuntimeConfig()
+const siteUrl = config.public.siteUrl.replace(/\/$/, '')
 
 useSeoMeta({
   title: 'Research Peptide Lab Reports - 99% Pure Research Peptides',
@@ -286,7 +288,7 @@ useSeoMeta({
 })
 
 useHead({
-  link: [{ rel: 'canonical', href: 'https://verifiedpeptides.com/lab-reports/' }]
+  link: [{ rel: 'canonical', href: `${siteUrl}/reports` }]
 })
 
 useReveal()
@@ -301,7 +303,7 @@ useReveal()
       >
         <div class="absolute inset-0 bg-white/10" aria-hidden="true" />
         <div class="relative mx-auto max-w-[1200px] px-4 text-center">
-          <h1 class="text-[32px] font-semibold leading-tight text-title-900 md:text-[42px]">
+          <h1 class="text-[32px] font-semibold leading-tight text-white! md:text-[42px]">
             Peptide Lab Test Reports
           </h1>
         </div>

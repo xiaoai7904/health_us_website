@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { blogPosts } from '~/data/blog'
 
+const config = useRuntimeConfig()
+const siteUrl = config.public.siteUrl.replace(/\/$/, '')
+
 useSeoMeta({
   title: 'Blog | Health US',
   description: 'Read peptide supplier, quality, documentation, and company updates.'
@@ -10,7 +13,7 @@ useHead({
   link: [
     {
       rel: 'canonical',
-      href: 'https://norcopeptide.com/blog/'
+      href: `${siteUrl}/blog`
     }
   ]
 })

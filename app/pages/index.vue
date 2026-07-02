@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import homeBgUrl from '~/assets/image/home-bg.webp'
 import homeBannerUrl from '~/assets/image/home-banner.jpg'
+import homeCheckUrl from '~/assets/image/home-check.png'
 import homeIconMoblieUrl from '~/assets/image/home-icon-mobile.webp'
 import homeIconPcUrl from '~/assets/image/home-icon-desktop.webp'
 import productImageOne from '~/assets/image/1.webp'
@@ -335,13 +336,13 @@ useReveal()
           <article
             v-for="product in featuredProducts"
             :key="product.name"
-            class="reveal"
+            class="reveal h-full"
           >
-            <div class="vp-product-card bg-white text-center transition duration-200">
-              <NuxtLink :to="product.href" class="vp-product-image block overflow-hidden bg-white">
+            <div class="vp-product-card flex h-full flex-col rounded-[8px] bg-white text-center transition duration-200">
+              <NuxtLink :to="product.href" class="vp-product-image block overflow-hidden rounded-t-[8px] bg-white">
                 <img :src="product.image" :alt="product.alt" class="aspect-square w-full object-cover" loading="lazy">
               </NuxtLink>
-              <div class="px-3 pb-4 pt-3">
+              <div class="flex flex-1 flex-col px-3 pb-4 pt-3">
                 <p class="mb-1 text-[11px] font-medium uppercase tracking-wide text-ink-700 opacity-80">Peptides</p>
                 <h3 class="min-h-[40px] text-[13px] font-medium leading-5 text-ink-900 sm:min-h-[48px] sm:text-[15px] sm:leading-6">
                   <NuxtLink :to="product.href" class="hover:text-brand-600">{{ product.name }}</NuxtLink>
@@ -349,7 +350,7 @@ useReveal()
                 <p class="mt-2 text-[14px] font-semibold text-ink-900 sm:text-[15px]">{{ product.price }}</p>
                 <NuxtLink
                   :to="product.href"
-                  class="mt-3 inline-flex min-h-8 w-full items-center justify-center rounded border border-brand-600 px-2 py-1.5 text-[10px] font-semibold uppercase text-brand-600 transition hover:bg-brand-600 hover:text-white sm:w-auto sm:px-3 sm:text-[11px]"
+                  class="mt-auto inline-flex min-h-8 w-full items-center justify-center rounded border border-brand-600 px-2 py-1.5 text-[10px] font-semibold uppercase text-brand-600 transition hover:bg-brand-600 hover:text-white sm:w-auto sm:px-3 sm:text-[11px]"
                 >
                   {{ product.action }}
                 </NuxtLink>
@@ -408,7 +409,7 @@ useReveal()
             <div class="grid grid-cols-2 gap-3 sm:grid-cols-4">
               <div v-for="point in testingPoints" :key="point" class="text-center">
                 <img
-                  src="https://verifiedpeptides.com/wp-content/uploads/2023/06/002-correct.png"
+                  :src="homeCheckUrl"
                   alt=""
                   class="mx-auto mb-2 size-10"
                   loading="lazy"
@@ -437,12 +438,12 @@ useReveal()
           </div>
 
           <div class="grid grid-cols-2 gap-x-5 gap-y-7 md:grid-cols-3 lg:grid-cols-4">
-            <article v-for="product in section.products" :key="`${section.title}-${product.name}`" class="reveal">
-              <div class="vp-product-card rounded-[8px] bg-white text-center transition duration-200">
+            <article v-for="product in section.products" :key="`${section.title}-${product.name}`" class="reveal h-full">
+              <div class="vp-product-card flex h-full flex-col rounded-[8px] bg-white text-center transition duration-200">
                 <NuxtLink :to="product.href" class="vp-product-image block overflow-hidden rounded-t-[8px] bg-white">
                   <img :src="product.image" :alt="product.alt" class="aspect-square w-full object-cover" loading="lazy">
                 </NuxtLink>
-                <div class="px-3 pb-4 pt-3">
+                <div class="flex flex-1 flex-col px-3 pb-4 pt-3">
                   <p class="mb-1 text-[11px] font-medium uppercase tracking-wide text-ink-700 opacity-80">Peptides</p>
                   <h4 class="min-h-[48px] text-[15px] font-medium leading-6 text-ink-900">
                     <NuxtLink :to="product.href" class="hover:text-brand-600">{{ product.name }}</NuxtLink>
@@ -450,7 +451,7 @@ useReveal()
                   <p class="mt-2 text-[15px] font-semibold text-ink-900">{{ product.price }}</p>
                   <NuxtLink
                     :to="product.href"
-                    class="mt-3 inline-flex min-h-8 items-center justify-center rounded border border-brand-600 px-3 py-1.5 text-[11px] font-semibold uppercase text-brand-600 transition hover:bg-brand-600 hover:text-white"
+                    class="mt-auto inline-flex min-h-8 items-center justify-center rounded border border-brand-600 px-3 py-1.5 text-[11px] font-semibold uppercase text-brand-600 transition hover:bg-brand-600 hover:text-white"
                   >
                     {{ product.action }}
                   </NuxtLink>
