@@ -41,9 +41,9 @@ useReveal()
           <div class="large-12 col">
             <div class="col-inner">
               <div class="section-title-container mb-4 flex items-center gap-4">
-                <b class="h-px flex-1 bg-line" aria-hidden="true" />
+                <b class="h-px flex-1 bg-brand-600" aria-hidden="true" />
                 <h3 class="section-title-main text-[22px] font-medium text-ink-900">User Login</h3>
-                <b class="h-px flex-1 bg-line" aria-hidden="true" />
+                <b class="h-px flex-1 bg-brand-600" aria-hidden="true" />
               </div>
 
               <div id="text-2889928854" class="text mb-5 text-[16px] leading-7 text-ink-800">
@@ -157,7 +157,7 @@ useReveal()
                 <p class="text-[34px] font-medium uppercase leading-tight text-ink-900 sm:text-[38px]">IN THE KNOW</p>
               </div>
 
-              <div class="mx-auto my-3 h-px max-w-[150px] bg-line" />
+              <div class="mx-auto my-3 h-px max-w-[150px] bg-brand-600" />
 
               <div id="text-202939131" class="text reveal">
                 <p class="mx-auto max-w-3xl text-center text-[20px] leading-8 text-ink-800 sm:text-[28px]">

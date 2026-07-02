@@ -324,9 +324,9 @@ useReveal()
     <section class="bg-white py-8 md:py-10">
       <div class="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8">
         <div class="mb-5 flex items-center gap-4">
-          <span class="h-px flex-1 bg-line" aria-hidden="true" />
+          <span class="h-px flex-1 bg-brand-600" aria-hidden="true" />
           <h2 class="text-center text-[24px] font-medium text-title-900 md:text-[28px]">Peptides</h2>
-          <span class="h-px flex-1 bg-line" aria-hidden="true" />
+          <span class="h-px flex-1 bg-brand-600" aria-hidden="true" />
         </div>
 
         <div class="grid grid-cols-2 gap-x-5 gap-y-7 md:grid-cols-3 lg:grid-cols-4">
@@ -421,17 +421,17 @@ useReveal()
 
     <section class="bg-white py-8 md:py-10">
       <div class="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8">
-        <div class="mb-6 flex items-center gap-4">
-          <span class="h-px flex-1 bg-line" aria-hidden="true" />
+        <div class="mb-6 flex justify-center items-center gap-4">
+          <!-- <span class="h-px flex-1 bg-brand-600" aria-hidden="true" /> -->
           <h2 class="text-center text-[30px] font-medium uppercase text-title-900 md:text-[36px]">PEPTIDE CATALOG</h2>
-          <span class="h-px flex-1 bg-line" aria-hidden="true" />
+          <!-- <span class="h-px flex-1 bg-brand-600" aria-hidden="true" /> -->
         </div>
 
         <div v-for="section in catalogSections" :key="section.title" class="mb-10 last:mb-0">
           <div class="mb-5 flex items-center gap-4">
-            <span class="h-px flex-1 bg-line" aria-hidden="true" />
+            <span class="h-px flex-1 bg-brand-600" aria-hidden="true" />
             <h3 class="text-[24px] font-medium text-title-900">{{ section.title }}</h3>
-            <span class="h-px flex-1 bg-line" aria-hidden="true" />
+            <span class="h-px flex-1 bg-brand-600" aria-hidden="true" />
           </div>
 
           <div class="grid grid-cols-2 gap-x-5 gap-y-7 md:grid-cols-3 lg:grid-cols-4">

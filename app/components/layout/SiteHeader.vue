@@ -3,6 +3,10 @@ import logoUrl from '~/assets/image/health-us-logo.png'
 
 const isMobileOpen = ref(false)
 const isSearchOpen = ref(false)
+const navListRef = ref<HTMLElement | null>(null)
+const indicator = ref({ left: 0, width: 0, top: 0, visible: false })
+
+const route = useRoute()
 
 const navItems = [
   { label: 'HOME', to: '/' },
@@ -22,6 +26,44 @@ const toggleMobile = () => {
   isMobileOpen.value = !isMobileOpen.value
 }
 
+const isNavActive = (to: string) => {
+  if (to === '/') {
+    return route.path === '/'
+  }
+
+  return route.path === to || route.path.startsWith(`${to}/`)
+}
+
+const updateNavIndicator = () => {
+  if (!import.meta.client || !navListRef.value) {
+    return
+  }
+
+  const activeLink = navListRef.value.querySelector<HTMLElement>('.header-link.is-active')
+
+  if (!activeLink) {
+    indicator.value.visible = false
+    return
+  }
+
+  const activeText = activeLink.querySelector<HTMLElement>('.header-link-text')
+
+  if (!activeText) {
+    indicator.value.visible = false
+    return
+  }
+
+  const listRect = navListRef.value.getBoundingClientRect()
+  const textRect = activeText.getBoundingClientRect()
+
+  indicator.value = {
+    left: textRect.left - listRect.left,
+    width: textRect.width,
+    top: textRect.bottom - listRect.top + 2,
+    visible: true
+  }
+}
+
 watch(isMobileOpen, (open) => {
   if (!import.meta.client) {
     return
@@ -30,9 +72,19 @@ watch(isMobileOpen, (open) => {
   document.body.style.overflow = open ? 'hidden' : ''
 })
 
+watch(() => route.path, () => {
+  nextTick(updateNavIndicator)
+})
+
+onMounted(() => {
+  nextTick(updateNavIndicator)
+  window.addEventListener('resize', updateNavIndicator)
+})
+
 onBeforeUnmount(() => {
   if (import.meta.client) {
     document.body.style.overflow = ''
+    window.removeEventListener('resize', updateNavIndicator)
   }
 })
 </script>
@@ -75,9 +127,28 @@ onBeforeUnmount(() => {
             </svg>
           </button>
 
-          <NuxtLink v-for="item in navItems" :key="item.to" :to="item.to" class="header-link" active-class="text-brand-600">
-            {{ item.label }}
-          </NuxtLink>
+          <div ref="navListRef" class="header-nav-links relative flex items-center">
+            <span
+              v-show="indicator.visible"
+              class="header-nav-indicator"
+              :style="{
+                width: `${indicator.width}px`,
+                top: `${indicator.top}px`,
+                transform: `translateX(${indicator.left}px)`
+              }"
+              aria-hidden="true"
+            />
+
+            <NuxtLink
+              v-for="item in navItems"
+              :key="item.to"
+              :to="item.to"
+              class="header-link"
+              :class="{ 'is-active': isNavActive(item.to) }"
+            >
+              <span class="header-link-text">{{ item.label }}</span>
+            </NuxtLink>
+          </div>
 
           <NuxtLink to="/order" class="ml-2 flex h-full items-center justify-center px-2 text-ink-900 transition hover:text-brand-600" aria-label="Account">
             <svg class="size-8" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -191,6 +262,19 @@ onBeforeUnmount(() => {
   color: var(--color-brand-600);
 }
 
+.header-link.is-active {
+  color: var(--color-brand-600);
+}
+
+.header-nav-indicator {
+  position: absolute;
+  left: 0;
+  height: 2px;
+  background: var(--color-brand-600);
+  transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1), width 0.28s cubic-bezier(0.22, 1, 0.36, 1), top 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+
 .mobile-link {
   border-radius: 4px;
   padding: 12px 10px;
@@ -225,6 +309,7 @@ onBeforeUnmount(() => {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .header-nav-indicator,
   .mobile-menu-fade-enter-active,
   .mobile-menu-fade-leave-active,
   .mobile-menu-slide-enter-active,

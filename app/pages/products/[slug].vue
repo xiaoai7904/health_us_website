@@ -454,9 +454,9 @@ useReveal()
     <section id="section_1571148676" class="py-8">
       <div class="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8">
         <div class="mb-5 flex items-center gap-4">
-          <span class="h-px flex-1 bg-line" aria-hidden="true" />
+          <span class="h-px flex-1 bg-brand-600" aria-hidden="true" />
           <h2 class="text-[24px] font-medium text-title-900">Explore Other High-Purity Peptides</h2>
-          <span class="h-px flex-1 bg-line" aria-hidden="true" />
+          <span class="h-px flex-1 bg-brand-600" aria-hidden="true" />
         </div>
 
         <div class="grid grid-cols-2 gap-x-5 gap-y-7 md:grid-cols-3 lg:grid-cols-4">

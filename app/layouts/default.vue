@@ -6,7 +6,7 @@ import SiteHeader from '~/components/layout/SiteHeader.vue'
 <template>
   <div class="min-h-screen bg-white text-ink-900">
     <SiteHeader />
-    <main class="pt-[118px]">
+    <main class="pt-[88px]">
       <slot />
     </main>
     <SiteFooter />
