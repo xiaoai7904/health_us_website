@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import productImageOne from '~/assets/image/1.webp'
+import productImageTwo from '~/assets/image/2.webp'
+
 interface CategoryProduct {
   name: string
   href: string
@@ -48,31 +51,31 @@ const products: CategoryProduct[] = [
   {
     name: 'BPC-157 Peptide (10MG)',
     href: '/products/bpc-157-reference-standard',
-    image: 'https://verifiedpeptides.com/wp-content/uploads/2025/04/BPC157-10mg-5-300x300.jpg',
+    image: productImageOne,
     alt: 'An information sheet for our 10MG BPC-157 peptide.',
     price: '$53.00',
-    action: 'Add to cart'
+    action: 'Select options'
   },
   {
     name: 'Blend: BPC-157 TB-500 Peptide (20MG)',
     href: '/products/bpc-157-reference-standard',
-    image: 'https://verifiedpeptides.com/wp-content/uploads/2025/04/BPC-157-TB-500-TB4-BLEND-300x300.jpg',
+    image: productImageTwo,
     alt: 'An information sheet for our BPC-157 TB-500 peptide blend.',
     price: '$107.00',
-    action: 'Add to cart'
+    action: 'Select options'
   },
   {
     name: 'GHK-Cu Copper Peptide (100MG)',
     href: '/products/ghk-cu-reference-standard',
-    image: 'https://verifiedpeptides.com/wp-content/uploads/2025/04/GHK-Cu-100mg-5-300x300.jpg',
+    image: productImageOne,
     alt: 'An information sheet for our 100MG GHK-Cu peptide.',
     price: '$49.99',
-    action: 'Add to cart'
+    action: 'Select options'
   },
   {
     name: 'Blend: Ipamorelin CJC-1295 (No DAC) 20MG',
     href: '/products/tb-500-reference-standard',
-    image: 'https://verifiedpeptides.com/wp-content/uploads/2024/02/Ipamorelin-MOD-GRF-Blend-20mg-300x300.jpg',
+    image: productImageTwo,
     alt: 'An information sheet for our Ipamorelin CJC-1295 No DAC peptide blend.',
     price: '$61.00 - $107.00',
     action: 'Select options'
@@ -80,47 +83,47 @@ const products: CategoryProduct[] = [
   {
     name: 'MOTS-C Peptide (20MG)',
     href: '/products/tb-500-reference-standard',
-    image: 'https://verifiedpeptides.com/wp-content/uploads/2025/04/Mots-C-1-300x300.jpg',
+    image: productImageOne,
     alt: 'An information sheet for our MOTS-C peptide.',
     price: '$77.00',
-    action: 'Add to cart'
+    action: 'Select options'
   },
   {
     name: 'TB-500 Peptide (TB4) 10MG',
     href: '/products/tb-500-reference-standard',
-    image: 'https://verifiedpeptides.com/wp-content/uploads/2025/04/TB-500-TB4-10mg-2-300x300.jpg',
+    image: productImageTwo,
     alt: 'An information sheet for our TB-500 peptide.',
     price: '$62.00',
-    action: 'Add to cart'
+    action: 'Select options'
   },
   {
     name: 'Tesamoreln Peptide (20MG)',
     href: '/products/bpc-157-reference-standard',
-    image: 'https://verifiedpeptides.com/wp-content/uploads/2024/07/Tesa-20mg-300x300.jpg',
+    image: productImageOne,
     alt: 'An information sheet for our Tesamorelin peptide.',
     price: '$119.00',
-    action: 'Add to cart'
+    action: 'Select options'
   },
   {
     name: 'PT-141 Peptide (10MG)',
     href: '/products/ghk-cu-reference-standard',
-    image: 'https://verifiedpeptides.com/wp-content/uploads/2025/04/PT141-10mg-3-300x300.jpg',
+    image: productImageTwo,
     alt: 'A peptide information sheet for PT-141.',
     price: '$34.99',
-    action: 'Add to cart'
+    action: 'Select options'
   },
   {
     name: 'Epitalon Peptide (10MG)',
     href: '/products/bpc-157-reference-standard',
-    image: 'https://verifiedpeptides.com/wp-content/uploads/2025/04/Epitalon-10mg-1-300x300.jpg',
+    image: productImageOne,
     alt: 'A peptide information sheet for Epitalon.',
     price: '$33.00',
-    action: 'Add to cart'
+    action: 'Select options'
   },
   {
     name: 'NAD+ Peptide (1000MG)',
     href: '/products/tb-500-reference-standard',
-    image: 'https://verifiedpeptides.com/wp-content/uploads/2024/07/NAD.-1000mgjpg-300x300.jpg',
+    image: productImageTwo,
     alt: 'A peptide information sheet for NAD peptide.',
     price: '$99.00 - $129.00',
     action: 'Select options'
@@ -128,18 +131,18 @@ const products: CategoryProduct[] = [
   {
     name: 'Ipamorelin Peptide (10MG)',
     href: '/products/tb-500-reference-standard',
-    image: 'https://verifiedpeptides.com/wp-content/uploads/2025/04/Ipamorelin-10mg-1-300x300.jpg',
+    image: productImageOne,
     alt: 'A peptide information sheet for Ipamorelin.',
     price: '$53.00',
-    action: 'Add to cart'
+    action: 'Select options'
   },
   {
     name: 'Blend: KPV GHK-Cu BPC-157 TB-500 (KLOW)',
     href: '/products/ghk-cu-reference-standard',
-    image: 'https://verifiedpeptides.com/wp-content/uploads/2025/10/KLOW-Blend-info-no-card-300x300.jpg',
+    image: productImageTwo,
     alt: 'A peptide information sheet for KLOW blend.',
     price: '$135.00',
-    action: 'Add to cart'
+    action: 'Select options'
   }
 ]
 

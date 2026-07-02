@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import type { Product } from '~/types/content'
+import productImageOne from '~/assets/image/1.webp'
+import productImageTwo from '~/assets/image/2.webp'
 
 interface GalleryImage {
   src: string
@@ -22,7 +24,7 @@ interface SpecRow {
 const { data } = await useFetch<{ items: Product[] }>('/api/products')
 
 const productName = '5-Amino 1MQ Peptide (50MG)'
-const activeImage = ref('https://verifiedpeptides.com/wp-content/uploads/2025/08/5-amino-1MQ05MG-800x800.jpg')
+const activeImage = ref(productImageOne)
 const galleryDirection = ref<'next' | 'previous'>('next')
 const activeTab = ref<'lab' | 'specifications'>('lab')
 const quantity = ref(1)
@@ -32,18 +34,18 @@ const zoomDialog = ref<HTMLElement | null>(null)
 
 const galleryImages: GalleryImage[] = [
   {
-    src: 'https://verifiedpeptides.com/wp-content/uploads/2025/08/5-amino-1MQ05MG-800x800.jpg',
-    thumb: 'https://verifiedpeptides.com/wp-content/uploads/2025/08/5-amino-1MQ05MG-300x300.jpg',
+    src: productImageOne,
+    thumb: productImageOne,
     alt: 'A peptide information sheet for the Verified Peptides 50mg 5-Amino 1MQ peptide.'
   },
   {
-    src: 'https://verifiedpeptides.com/wp-content/uploads/2025/08/5-Amino-1MQ-Peptide-800x800.jpg',
-    thumb: 'https://verifiedpeptides.com/wp-content/uploads/2025/08/5-Amino-1MQ-Peptide-300x300.jpg',
+    src: productImageTwo,
+    thumb: productImageTwo,
     alt: 'The peptide packaging for the 99% pure lyophilized 5-Amino 1MQ peptide.'
   },
   {
-    src: 'https://verifiedpeptides.com/wp-content/uploads/2025/11/5-Amino-1MQ-Peptide-Purity-Certificate-of-Analysis-Lab-Test-Report-November-2025-sq-800x800.jpg',
-    thumb: 'https://verifiedpeptides.com/wp-content/uploads/2025/11/5-Amino-1MQ-Peptide-Purity-Certificate-of-Analysis-Lab-Test-Report-November-2025-sq-300x300.jpg',
+    src: productImageOne,
+    thumb: productImageOne,
     alt: '5-Amino 1MQ Peptide Purity Certificate of Analysis Lab Test Report November 2025'
   }
 ]
@@ -146,7 +148,7 @@ useSeoMeta({
   description: 'Buy third party tested 5-Amino 1MQ Peptide (50MG) - verified 99% purity with published lab report. Over 250+ published lab reports. Every batch tested. Same day shipping.',
   ogTitle: '5-Amino 1MQ Peptide (50MG)',
   ogDescription: 'Buy third party tested 5-Amino 1MQ Peptide (50MG) - verified 99% purity with published lab report.',
-  ogImage: 'https://verifiedpeptides.com/wp-content/uploads/2025/08/5-amino-1MQ05MG.jpg'
+  ogImage: productImageOne
 })
 
 useHead({
@@ -234,15 +236,15 @@ useReveal()
 
             <div class="mt-6">
               <p class="mb-4 font-medium uppercase text-ink-900">TESTED FOR:</p>
-              <div class="grid gap-3 sm:grid-cols-3">
-                <div v-for="item in testedFor" :key="item" class="flex items-center gap-1">
+              <div class="grid grid-cols-2 gap-x-4 gap-y-3">
+                <div v-for="item in testedFor" :key="item" class="flex min-w-0 items-center gap-2">
                   <img
                     src="https://verifiedpeptides.com/wp-content/uploads/2024/09/gradientcheckmarktick.png"
                     alt="check mark"
-                    class="size-8"
+                    class="size-7 shrink-0 sm:size-8"
                     loading="lazy"
                   >
-                  <span class="text-[17px] font-medium uppercase leading-none text-ink-900">{{ item }}</span>
+                  <span class="min-w-0 text-[13px] font-medium uppercase leading-tight text-ink-900 sm:text-[15px]">{{ item }}</span>
                 </div>
               </div>
               <a
@@ -298,7 +300,7 @@ useReveal()
                 </div>
 
                 <button class="single_add_to_cart_button button alt min-h-12 flex-1 rounded bg-brand-600 px-6 text-sm font-semibold uppercase text-white transition hover:bg-brand-700" type="submit">
-                  Add to cart
+                  Select options
                 </button>
               </form>
             </div>
@@ -460,11 +462,11 @@ useReveal()
         </div>
 
         <div class="grid grid-cols-2 gap-x-5 gap-y-7 md:grid-cols-3 lg:grid-cols-4">
-          <article v-for="related in relatedProducts" :key="related.id" class="reveal">
-            <div class="vp-product-card bg-white text-center transition duration-200">
-              <NuxtLink :to="`/products/${related.slug}`" class="vp-product-image block overflow-hidden bg-white">
+          <article v-for="(related, index) in relatedProducts" :key="related.id" class="reveal">
+            <div class="vp-product-card rounded-[8px] bg-white text-center transition duration-200">
+              <NuxtLink :to="`/products/${related.slug}`" class="vp-product-image block overflow-hidden rounded-t-[8px] bg-white">
                 <img
-                  :src="related.images[0]?.src"
+                  :src="index % 2 === 0 ? productImageOne : productImageTwo"
                   :alt="related.images[0]?.alt || related.name"
                   class="aspect-square w-full object-cover"
                   loading="lazy"
@@ -484,7 +486,7 @@ useReveal()
                   :to="`/products/${related.slug}`"
                   class="mt-3 inline-flex min-h-8 items-center justify-center rounded border border-brand-600 px-3 py-1.5 text-[11px] font-semibold uppercase text-brand-600 transition hover:bg-brand-600 hover:text-white"
                 >
-                  Add to cart
+                  Select options
                 </NuxtLink>
               </div>
             </div>
