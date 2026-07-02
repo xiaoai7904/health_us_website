@@ -224,7 +224,7 @@ useReveal()
               <NuxtLink to="/products" class="hover:text-brand-600">Peptides</NuxtLink>
             </nav>
 
-            <h1 class="product-title product_title entry-title text-[32px] font-medium leading-tight text-ink-900 md:text-[40px]">
+            <h1 class="product-title product_title entry-title text-[32px] font-medium leading-tight text-title-900 md:text-[40px]">
               {{ productName }}
             </h1>
 
@@ -305,7 +305,7 @@ useReveal()
 
             <p class="mt-4 text-[15px] leading-5 text-ink-800">
               This product comes as <strong>lyophilized powder</strong> and is not reconstituted. All products and materials sold on this site are for Research Use Only and not for human use; subject to our
-              <NuxtLink to="/faq" class="text-[#3366ff] hover:underline">Terms and Conditions</NuxtLink>.
+              <NuxtLink to="/faq" class="text-brand-600 hover:underline">Terms and Conditions</NuxtLink>.
             </p>
 
             <div class="mt-5 rounded bg-[#f9f9f9] px-4 py-3 shadow-sm">
@@ -400,7 +400,7 @@ useReveal()
           </div>
 
           <div v-else class="product-short-description py-8">
-            <h2 class="text-[28px] font-medium text-ink-900">5-Amino 1MQ Peptide Information</h2>
+            <h2 class="text-[28px] font-medium text-title-900">5-Amino 1MQ Peptide Information</h2>
             <table class="mt-5 w-full border-collapse text-left">
               <tbody>
                 <tr v-for="row in specifications" :key="row.label" class="border-b border-line">
@@ -410,7 +410,7 @@ useReveal()
               </tbody>
             </table>
 
-            <h2 class="mt-8 text-[26px] font-semibold text-ink-900">Why isn&apos;t there more information on our 5-Amino 1MQ peptide?</h2>
+            <h2 class="mt-8 text-[26px] font-semibold text-title-900">Why isn&apos;t there more information on our 5-Amino 1MQ peptide?</h2>
             <p class="mt-3 max-w-4xl leading-8 text-ink-800">
               Due to the legal landscape of peptides and research products, providing information that may imply anything beyond laboratory research use is a legal liability. We&apos;re an expert biotechnology company that provides high quality peptides and products for purchase to advance scientific research in this field.
             </p>
@@ -422,25 +422,25 @@ useReveal()
     <!-- <section id="section_398907586" class="py-8">
       <div class="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8">
         <div class="text-center">
-          <h2 class="text-[32px] font-medium text-ink-900">Why Choose Verified Peptides?</h2>
+          <h2 class="text-[32px] font-medium text-title-900">Why Choose Verified Peptides?</h2>
           <h3 class="mt-2 text-[22px] font-medium text-ink-800">The industry&apos;s most trusted source for research peptides</h3>
         </div>
 
         <div class="mt-8 grid gap-6 md:grid-cols-2">
           <div class="verified-peptides-feature-card rounded border border-line bg-white p-7 shadow-sm">
             <h3 class="text-[22px] font-semibold leading-tight text-brand-600">The #1 Leader In Peptide Testing<br>500+ Certificates of Analysis</h3>
-            <p class="mt-3 leading-7 text-[#333]">What does this mean for you? You can be sure we don&apos;t cut corners on testing every single batch. <NuxtLink to="/reports" class="text-[#3366ff]">Visit our Lab Reports page.</NuxtLink></p>
+            <p class="mt-3 leading-7 text-ink-900">What does this mean for you? You can be sure we don&apos;t cut corners on testing every single batch. <NuxtLink to="/reports" class="text-brand-600">Visit our Lab Reports page.</NuxtLink></p>
             <h3 class="mt-6 text-[22px] font-semibold leading-tight text-brand-600">A Long Standing Trusted Company<br>6+ Years of Peptides</h3>
-            <p class="mt-3 leading-7 text-[#333]">We pioneered third party lab testing and have stood the test of time. Our first lab report dates back to <strong>2019</strong> proving our track record.</p>
+            <p class="mt-3 leading-7 text-ink-900">We pioneered third party lab testing and have stood the test of time. Our first lab report dates back to <strong>2019</strong> proving our track record.</p>
             <h3 class="mt-6 text-[22px] font-semibold leading-tight text-brand-600">The Best $/mg Prices At The Highest Quality</h3>
-            <p class="mt-3 leading-7 text-[#333]">You won&apos;t find this degree of testing and quality at this price.</p>
+            <p class="mt-3 leading-7 text-ink-900">You won&apos;t find this degree of testing and quality at this price.</p>
           </div>
 
           <div class="verified-peptides-feature-card rounded border border-line bg-white p-7 shadow-sm">
             <h3 class="text-[22px] font-semibold leading-tight text-brand-600">Peptides Tested For More Than Just Purity</h3>
-            <p class="mt-3 leading-7 text-[#333]">We conduct an array of tests via HPLC and other methods for our peptides: purity, weight, endotoxins(LPS), sterility (bacteria &amp; mold/yeast), and TFA content.</p>
+            <p class="mt-3 leading-7 text-ink-900">We conduct an array of tests via HPLC and other methods for our peptides: purity, weight, endotoxins(LPS), sterility (bacteria &amp; mold/yeast), and TFA content.</p>
             <h3 class="mt-6 text-[22px] font-semibold leading-tight text-brand-600">Transparency. Trusted. Reliable.</h3>
-            <ul class="mt-4 space-y-2 text-[#333]">
+            <ul class="mt-4 space-y-2 text-ink-900">
               <li v-for="item in ['Batch number on every vial', 'Published Certificates of Analysis', 'Expert customer service', 'Satisfaction and quality guarantee', 'Cold pack styrofoam shipping']" :key="item" class="flex gap-2">
                 <span class="text-brand-600">✓</span>
                 <span>{{ item }}</span>
@@ -455,7 +455,7 @@ useReveal()
       <div class="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8">
         <div class="mb-5 flex items-center gap-4">
           <span class="h-px flex-1 bg-line" aria-hidden="true" />
-          <h2 class="text-[24px] font-medium text-ink-900">Explore Other High-Purity Peptides</h2>
+          <h2 class="text-[24px] font-medium text-title-900">Explore Other High-Purity Peptides</h2>
           <span class="h-px flex-1 bg-line" aria-hidden="true" />
         </div>
 

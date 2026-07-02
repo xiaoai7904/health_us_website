@@ -301,7 +301,7 @@ useReveal()
       >
         <div class="absolute inset-0 bg-white/10" aria-hidden="true" />
         <div class="relative mx-auto max-w-[1200px] px-4 text-center">
-          <h1 class="text-[32px] font-semibold leading-tight text-ink-900 md:text-[42px]">
+          <h1 class="text-[32px] font-semibold leading-tight text-title-900 md:text-[42px]">
             Peptide Lab Test Reports
           </h1>
         </div>
@@ -311,7 +311,7 @@ useReveal()
     <section id="section_1806637067" class="py-8 md:py-10">
       <div class="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8">
         <div class="reveal text-center">
-          <h2 class="text-[24px] font-medium leading-snug text-ink-900 md:text-[30px]">
+          <h2 class="text-[24px] font-medium leading-snug text-title-900 md:text-[30px]">
             Consistent, reliable, verified quality peptides.
           </h2>
           <h3 class="mx-auto mt-3 max-w-4xl text-[18px] font-medium leading-8 text-ink-900 md:text-[22px]">
@@ -352,7 +352,7 @@ useReveal()
                           <tbody>
                             <tr v-for="fact in item.facts" :key="fact.label" class="border-b border-[#eef3f8] last:border-b-0">
                               <td class="w-[42%] bg-[#f8fbfe] px-4 py-3 text-[13px] font-semibold text-[#5f6b7a]">{{ fact.label }}:</td>
-                              <td class="px-4 py-3 text-[13px] font-medium text-[#1f2937]">{{ fact.value }}</td>
+                              <td class="px-4 py-3 text-[13px] font-medium text-ink-900">{{ fact.value }}</td>
                             </tr>
                           </tbody>
                         </table>

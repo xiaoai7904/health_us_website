@@ -61,18 +61,18 @@ const submit = async () => {
 </script>
 
 <template>
-  <div class="bg-white text-[#242424]">
+  <div class="bg-white text-ink-900">
     <section class="border-b border-[#e8eef4] bg-[#f8fafc] py-9 text-center">
       <div class="mx-auto max-w-[1222px] px-4 sm:px-6 lg:px-8">
         <h1 class="text-[34px] font-semibold leading-tight">
           Contact US
         </h1>
-        <nav aria-label="Breadcrumb" class="mt-2 flex items-center justify-center gap-2 text-[13px] text-[#777]">
+        <nav aria-label="Breadcrumb" class="mt-2 flex items-center justify-center gap-2 text-[13px] text-ink-700">
           <NuxtLink to="/" class="transition hover:text-brand-600">
             Home
           </NuxtLink>
           <span class="h-1 w-1 rounded-full bg-[#c8d0d8]" aria-hidden="true" />
-          <span class="text-[#555]">Contact US</span>
+          <span class="text-ink-700">Contact US</span>
         </nav>
       </div>
     </section>
@@ -87,11 +87,11 @@ const submit = async () => {
             fetchpriority="high"
           >
 
-          <h2 class="mt-7 max-w-[460px] text-[30px] font-semibold leading-[1.2] text-[#222] sm:text-[36px]">
+          <h2 class="mt-7 max-w-[460px] text-[30px] font-semibold leading-[1.2] text-title-900 sm:text-[36px]">
             Secure Your Premium Peptides - Connect with Our Expert Team Today!
           </h2>
 
-          <div class="mt-8 space-y-5 text-[16px] leading-7 text-[#333]">
+          <div class="mt-8 space-y-5 text-[16px] leading-7 text-ink-900">
             <div v-for="method in contactMethods" :key="method.label">
               <p>
                 <span class="underline decoration-brand-100 decoration-[8px] underline-offset-[-2px]">
@@ -100,7 +100,7 @@ const submit = async () => {
               </p>
               <a
                 :href="method.href"
-                class="mt-1 inline-block text-[17px] text-[#333] transition hover:text-brand-600"
+                class="mt-1 inline-block text-[17px] text-ink-900 transition hover:text-brand-600"
                 :target="method.href.startsWith('http') ? '_blank' : undefined"
                 :rel="method.href.startsWith('http') ? 'noopener noreferrer' : undefined"
               >
@@ -112,7 +112,7 @@ const submit = async () => {
 
         <section class="reveal bg-[#f5f5f5] p-6 sm:p-9 lg:p-12">
           <div class="bg-white/0">
-            <h2 class="text-[26px] font-semibold lowercase leading-tight text-[#222] sm:text-[30px]">
+            <h2 class="text-[26px] font-semibold lowercase leading-tight text-title-900 sm:text-[30px]">
               send a message
             </h2>
 

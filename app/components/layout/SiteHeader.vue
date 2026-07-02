@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import logoUrl from '~/assets/image/health-us-logo.png'
+
 const isMobileOpen = ref(false)
 const isSearchOpen = ref(false)
 
@@ -53,9 +55,9 @@ onBeforeUnmount(() => {
           @click="closeMobile"
         >
           <img
-            src="https://verifiedpeptides.com/wp-content/uploads/2023/11/vplogowithvialfront-1.jpg"
+            :src="logoUrl"
             alt="Verified Peptides"
-            class="max-h-[88px] w-full object-contain object-left"
+            class="max-h-[60px] w-full object-contain object-left"
           >
         </NuxtLink>
 
@@ -142,7 +144,7 @@ onBeforeUnmount(() => {
           <div class="flex min-h-[74px] items-center justify-between border-b border-line px-5">
             <NuxtLink to="/" class="flex max-w-[230px] items-center" aria-label="Verified Peptides home" @click="closeMobile">
               <img
-                src="https://verifiedpeptides.com/wp-content/uploads/2023/11/vplogowithvialfront-1.jpg"
+                :src="logoUrl"
                 alt="Verified Peptides"
                 class="max-h-[58px] w-full object-contain object-left"
               >
@@ -180,13 +182,13 @@ onBeforeUnmount(() => {
   padding: 0 10px;
   font-size: 14px;
   font-weight: 600;
-  color: #000;
+  color: var(--color-ink-900);
   text-transform: uppercase;
   transition: color 0.2s ease;
 }
 
 .header-link:hover {
-  color: #1e73be;
+  color: var(--color-brand-600);
 }
 
 .mobile-link {
@@ -194,12 +196,12 @@ onBeforeUnmount(() => {
   padding: 12px 10px;
   font-size: 14px;
   font-weight: 600;
-  color: #1f2937;
+  color: var(--color-ink-900);
 }
 
 .mobile-link:hover {
-  background: #eef7ff;
-  color: #1e73be;
+  background: var(--color-brand-50);
+  color: var(--color-brand-600);
 }
 
 .mobile-menu-fade-enter-active,

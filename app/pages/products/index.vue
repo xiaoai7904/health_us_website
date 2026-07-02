@@ -179,7 +179,7 @@ useReveal()
 
         <section class="shop-container">
           <div class="term-description mb-6">
-            <h1 class="text-[32px] font-medium leading-tight text-ink-900 md:text-[40px]">
+            <h1 class="text-[32px] font-medium leading-tight text-title-900 md:text-[40px]">
               Shop Our Full Collection of Peptides
             </h1>
           </div>

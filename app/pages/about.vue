@@ -164,18 +164,18 @@ const submitContact = async () => {
 </script>
 
 <template>
-  <div class="bg-white text-[#242424]">
+  <div class="bg-white text-ink-900">
     <section class="border-b border-[#e8eef4] bg-[#f8fafc] py-9 text-center">
       <div class="mx-auto max-w-[1222px] px-4 sm:px-6 lg:px-8">
         <h1 class="text-[34px] font-semibold leading-tight">
           About us
         </h1>
-        <nav aria-label="Breadcrumb" class="mt-2 flex items-center justify-center gap-2 text-[13px] text-[#777]">
+        <nav aria-label="Breadcrumb" class="mt-2 flex items-center justify-center gap-2 text-[13px] text-ink-700">
           <NuxtLink to="/" class="transition hover:text-[#23527c]">
             Home
           </NuxtLink>
           <span class="h-1 w-1 rounded-full bg-[#c8d0d8]" aria-hidden="true" />
-          <span class="text-[#555]">About us</span>
+          <span class="text-ink-700">About us</span>
         </nav>
       </div>
     </section>
@@ -183,7 +183,7 @@ const submitContact = async () => {
     <main>
       <section class="mx-auto grid max-w-[1222px] gap-0 px-4 py-10 sm:px-6 lg:grid-cols-2 lg:px-8 lg:py-14">
         <div class="reveal flex min-h-[360px] flex-col justify-center bg-[#f7f7f7] px-7 py-12 sm:px-10 lg:min-h-[460px] lg:px-12">
-          <h2 class="max-w-[520px] text-[34px] font-semibold leading-[1.18] text-[#222] sm:text-[42px]">
+          <h2 class="max-w-[520px] text-[34px] font-semibold leading-[1.18] text-title-900 sm:text-[42px]">
             Trusted Peptide Manufacturer with 7+ Years of Experience
           </h2>
           <div class="my-6 h-px w-20 bg-[#dedede]" />
@@ -199,16 +199,16 @@ const submitContact = async () => {
 
       <section class="bg-brand-50 py-12 lg:py-16">
         <div class="mx-auto max-w-[1222px] px-4 sm:px-6 lg:px-8">
-          <h2 class="reveal text-center text-[32px] font-semibold leading-tight text-[#222] sm:text-[40px]">
+          <h2 class="reveal text-center text-[32px] font-semibold leading-tight text-title-900 sm:text-[40px]">
             What we do
           </h2>
           <div class="mt-10 grid gap-8 md:grid-cols-3">
             <article v-for="card in workCards" :key="card.title" class="reveal bg-transparent text-left">
               <img :src="card.image" :alt="card.title" class="h-16 w-16 object-contain" loading="lazy">
-              <h3 class="mt-6 text-[21px] font-semibold leading-7 text-[#222]">
+              <h3 class="mt-6 text-[21px] font-semibold leading-7 text-title-900">
                 {{ card.title }}
               </h3>
-              <p class="mt-3 text-[15px] leading-7 text-[#555]">
+              <p class="mt-3 text-[15px] leading-7 text-ink-700">
                 {{ card.text }}
               </p>
             </article>
@@ -218,10 +218,10 @@ const submitContact = async () => {
 
       <section class="mx-auto max-w-[1222px] px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
         <div class="reveal text-center">
-          <span class="inline-block bg-gradient-to-t from-brand-100 from-45% to-transparent px-1 text-[15px] font-semibold uppercase tracking-normal text-[#333]">
+          <span class="inline-block bg-gradient-to-t from-brand-100 from-45% to-transparent px-1 text-[15px] font-semibold uppercase tracking-normal text-ink-900">
             product line
           </span>
-          <h2 class="mt-3 text-[32px] font-semibold leading-tight text-[#222] sm:text-[40px]">
+          <h2 class="mt-3 text-[32px] font-semibold leading-tight text-title-900 sm:text-[40px]">
             Products Categories
           </h2>
         </div>
@@ -247,7 +247,7 @@ const submitContact = async () => {
               </div>
             </div>
             <div class="px-5 py-5 text-center">
-              <h3 class="text-[18px] font-semibold text-[#222]">
+              <h3 class="text-[18px] font-semibold text-title-900">
                 {{ product.title }}
               </h3>
             </div>
@@ -275,10 +275,10 @@ const submitContact = async () => {
         </div>
 
         <div class="reveal flex flex-col justify-center">
-          <span class="w-fit bg-gradient-to-t from-brand-100 from-45% to-transparent px-1 text-[15px] font-semibold text-[#333]">
+          <span class="w-fit bg-gradient-to-t from-brand-100 from-45% to-transparent px-1 text-[15px] font-semibold text-ink-900">
             Grow your business
           </span>
-          <h2 class="mt-3 text-[32px] font-semibold leading-tight text-[#222] sm:text-[40px]">
+          <h2 class="mt-3 text-[32px] font-semibold leading-tight text-title-900 sm:text-[40px]">
             Our Commitment to Quality
           </h2>
           <p class="mt-5 text-[16px] leading-7 text-[#666]">
@@ -294,7 +294,7 @@ const submitContact = async () => {
                 type="button"
                 role="tab"
                 class="border-b-2 px-4 py-3 text-[14px] font-semibold transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-600"
-                :class="activeQualityTab === tab.id ? 'border-brand-600 text-[#222]' : 'border-transparent text-[#777] hover:text-[#222]'"
+                :class="activeQualityTab === tab.id ? 'border-brand-600 text-title-900' : 'border-transparent text-ink-700 hover:text-title-900'"
                 :aria-selected="activeQualityTab === tab.id"
                 :aria-controls="`quality-panel-${tab.id}`"
                 @click="activeQualityTab = tab.id"
@@ -304,7 +304,7 @@ const submitContact = async () => {
             </div>
             <div
               :id="`quality-panel-${selectedQualityTab.id}`"
-              class="min-h-[92px] border border-t-0 border-[#e8edf2] px-5 py-6 text-[15px] leading-7 text-[#555]"
+              class="min-h-[92px] border border-t-0 border-[#e8edf2] px-5 py-6 text-[15px] leading-7 text-ink-700"
               role="tabpanel"
               :aria-labelledby="`quality-tab-${selectedQualityTab.id}`"
             >
@@ -316,14 +316,14 @@ const submitContact = async () => {
 
       <section class="mx-auto grid max-w-[1222px] gap-10 px-4 py-10 sm:px-6 lg:grid-cols-2 lg:px-8 lg:py-16">
         <div class="reveal flex flex-col justify-center">
-          <span class="w-fit bg-gradient-to-t from-brand-100 from-45% to-transparent px-1 text-[15px] font-semibold text-[#333]">
+          <span class="w-fit bg-gradient-to-t from-brand-100 from-45% to-transparent px-1 text-[15px] font-semibold text-ink-900">
             Global Presence
           </span>
-          <h2 class="mt-3 text-[32px] font-semibold leading-tight text-[#222] sm:text-[40px]">
+          <h2 class="mt-3 text-[32px] font-semibold leading-tight text-title-900 sm:text-[40px]">
             Global Presence
           </h2>
           <p class="mt-5 text-[16px] leading-8 text-[#666]">
-            We proudly serve clients in over <strong class="font-semibold text-[#222]">35 countries</strong>, from research labs to pharmaceutical companies and biotech startups.
+            We proudly serve clients in over <strong class="font-semibold text-title-900">35 countries</strong>, from research labs to pharmaceutical companies and biotech startups.
             <br>
             Our team supports global shipping, multilingual communication, and tailored logistic solutions to fit your needs.
           </p>
@@ -339,7 +339,7 @@ const submitContact = async () => {
       </section>
 
       <section class="mx-auto max-w-[1222px] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
-        <h2 class="reveal text-center text-[32px] font-semibold leading-tight text-[#222] sm:text-[40px]">
+        <h2 class="reveal text-center text-[32px] font-semibold leading-tight text-title-900 sm:text-[40px]">
           Our sales experts
         </h2>
         <div class="mt-10 grid grid-cols-2 gap-x-5 gap-y-10 sm:grid-cols-3 lg:grid-cols-4">
@@ -350,14 +350,14 @@ const submitContact = async () => {
               class="mx-auto h-[150px] w-[150px] rounded-full object-cover"
               loading="lazy"
             >
-            <h3 class="mt-4 text-[16px] font-semibold text-[#222]">
+            <h3 class="mt-4 text-[16px] font-semibold text-title-900">
               {{ member.name }}
             </h3>
             <div class="mt-3 flex justify-center gap-2" aria-label="Social links">
-              <a href="#" class="flex h-8 w-8 items-center justify-center rounded-full border border-[#e1e5e9] text-[12px] font-semibold text-[#555] transition hover:border-brand-600 hover:text-brand-600" aria-label="Facebook social link">
+              <a href="#" class="flex h-8 w-8 items-center justify-center rounded-full border border-[#e1e5e9] text-[12px] font-semibold text-ink-700 transition hover:border-brand-600 hover:text-brand-600" aria-label="Facebook social link">
                 f
               </a>
-              <a href="#" class="flex h-8 w-8 items-center justify-center rounded-full border border-[#e1e5e9] text-[12px] font-semibold text-[#555] transition hover:border-brand-600 hover:text-brand-600" aria-label="X social link">
+              <a href="#" class="flex h-8 w-8 items-center justify-center rounded-full border border-[#e1e5e9] text-[12px] font-semibold text-ink-700 transition hover:border-brand-600 hover:text-brand-600" aria-label="X social link">
                 x
               </a>
             </div>
@@ -367,7 +367,7 @@ const submitContact = async () => {
 
       <section class="mx-auto grid max-w-[1222px] gap-0 px-4 py-10 sm:px-6 lg:grid-cols-2 lg:px-8 lg:py-16">
         <div class="reveal bg-[#f5f5f5] px-6 py-10 sm:px-10 lg:px-12">
-          <h2 class="text-[32px] font-semibold leading-tight text-[#222] sm:text-[40px]">
+          <h2 class="text-[32px] font-semibold leading-tight text-title-900 sm:text-[40px]">
             Quote Now
           </h2>
           <p class="mt-4 text-[16px] leading-7 text-[#666]">

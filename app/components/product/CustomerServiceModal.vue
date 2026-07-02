@@ -29,7 +29,7 @@ onMounted(() => {
           <div class="flex items-start justify-between gap-4">
             <div>
               <p class="text-sm font-semibold uppercase tracking-wide text-brand-700">Customer service</p>
-              <h2 class="mt-2 text-2xl font-bold text-ink-900">Request purchase support</h2>
+              <h2 class="mt-2 text-2xl font-bold text-title-900">Request purchase support</h2>
             </div>
             <button class="rounded border border-line px-3 py-1 text-sm font-semibold" type="button" @click="close">Close</button>
           </div>

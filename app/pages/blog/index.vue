@@ -22,15 +22,15 @@ useReveal()
   <div class="bg-white">
     <section class="border-b border-[#e8eef4] bg-[#f8fafc] py-9 text-center">
       <div class="mx-auto max-w-[1222px] px-4 sm:px-6 lg:px-8">
-        <h1 class="text-[34px] font-semibold leading-tight text-[#242424]">
+        <h1 class="text-[34px] font-semibold leading-tight text-title-900">
           Blog
         </h1>
-        <nav aria-label="Breadcrumb" class="mt-2 flex items-center justify-center gap-2 text-[13px] text-[#777]">
+        <nav aria-label="Breadcrumb" class="mt-2 flex items-center justify-center gap-2 text-[13px] text-ink-700">
           <NuxtLink to="/" class="transition hover:text-brand-600">
             Home
           </NuxtLink>
           <span class="h-1 w-1 rounded-full bg-[#c8d0d8]" aria-hidden="true" />
-          <span class="text-[#555]">Blog</span>
+          <span class="text-ink-700">Blog</span>
         </nav>
       </div>
     </section>
@@ -56,15 +56,15 @@ useReveal()
 
           <time
             :datetime="post.publishedAt"
-            class="absolute left-5 top-5 flex h-[70px] w-[62px] flex-col items-center justify-center bg-white text-center text-[#333] shadow-[0_1px_8px_rgba(0,0,0,0.16)]"
+            class="absolute left-5 top-5 flex h-[70px] w-[62px] flex-col items-center justify-center bg-white text-center text-ink-900 shadow-[0_1px_8px_rgba(0,0,0,0.16)]"
           >
             <span class="text-[26px] font-semibold leading-none">{{ post.day }}</span>
-            <span class="mt-1 text-[12px] font-semibold uppercase text-[#777]">{{ post.month }}</span>
+            <span class="mt-1 text-[12px] font-semibold uppercase text-ink-700">{{ post.month }}</span>
           </time>
 
           <div class="px-6 pb-7 pt-6">
             <header>
-              <h2 class="text-[20px] font-semibold leading-7 text-[#222]">
+              <h2 class="text-[20px] font-semibold leading-7 text-title-900">
                 <NuxtLink :to="`/blog/${post.slug}`" class="transition hover:text-brand-600">
                   {{ post.title }}
                 </NuxtLink>

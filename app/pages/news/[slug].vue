@@ -24,7 +24,7 @@ useReveal()
   <article class="reveal mx-auto max-w-3xl px-4 py-14 sm:px-6 lg:px-8">
     <NuxtLink to="/news" class="text-sm font-semibold text-brand-700">Back to news</NuxtLink>
     <p class="mt-8 text-sm font-semibold text-brand-700">{{ article.category }} | {{ article.publishedAt }}</p>
-    <h1 class="mt-3 text-4xl font-bold tracking-normal text-ink-900">{{ article.title }}</h1>
+    <h1 class="mt-3 text-4xl font-bold tracking-normal text-title-900">{{ article.title }}</h1>
     <p class="mt-5 text-lg leading-8 text-ink-700">{{ article.excerpt }}</p>
     <div class="mt-8 border-t border-line pt-8 text-base leading-8 text-ink-700">
       {{ article.body }}

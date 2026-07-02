@@ -201,15 +201,15 @@ const toggleItem = (id: string) => {
   <div class="bg-white">
     <section class="border-b border-[#e8eef4] bg-[#f8fafc] py-9 text-center">
       <div class="mx-auto max-w-[1222px] px-4 sm:px-6 lg:px-8">
-        <h1 class="text-[34px] font-semibold leading-tight text-[#242424]">
+        <h1 class="text-[34px] font-semibold leading-tight text-title-900">
           FAQ
         </h1>
-        <nav aria-label="Breadcrumb" class="mt-2 flex items-center justify-center gap-2 text-[13px] text-[#777]">
+        <nav aria-label="Breadcrumb" class="mt-2 flex items-center justify-center gap-2 text-[13px] text-ink-700">
           <NuxtLink to="/" class="transition hover:text-[#23527c]">
             Home
           </NuxtLink>
           <span class="h-1 w-1 rounded-full bg-[#c8d0d8]" aria-hidden="true" />
-          <span class="text-[#555]">FAQ</span>
+          <span class="text-ink-700">FAQ</span>
         </nav>
       </div>
     </section>
@@ -229,7 +229,7 @@ const toggleItem = (id: string) => {
             @click="toggleItem(item.id)"
           >
             <span
-              class="relative flex h-5 w-5 shrink-0 items-center justify-center text-[#333]"
+              class="relative flex h-5 w-5 shrink-0 items-center justify-center text-ink-900"
               aria-hidden="true"
             >
               <span class="absolute h-[2px] w-[14px] rounded-full bg-current transition-transform duration-200" />
@@ -238,7 +238,7 @@ const toggleItem = (id: string) => {
                 :class="isOpen(item.id) ? 'scale-y-0' : 'scale-y-100'"
               />
             </span>
-            <span class="text-[16px] font-semibold leading-6 text-[#333]">
+            <span class="text-[16px] font-semibold leading-6 text-ink-900">
               {{ item.question }}
             </span>
           </button>
@@ -247,7 +247,7 @@ const toggleItem = (id: string) => {
             <div
               v-if="isOpen(item.id)"
               :id="`faq-panel-${item.id}`"
-              class="border-t border-[#f0f3f6] px-5 pb-6 pt-1 text-[15px] leading-7 text-[#555] sm:px-6"
+              class="border-t border-[#f0f3f6] px-5 pb-6 pt-1 text-[15px] leading-7 text-ink-700 sm:px-6"
             >
               <template v-for="(block, blockIndex) in item.content" :key="`${item.id}-${blockIndex}`">
                 <p v-if="block.type === 'paragraph'" class="mt-4">
@@ -255,7 +255,7 @@ const toggleItem = (id: string) => {
                 </p>
                 <ul v-else class="mt-4 list-disc space-y-1 pl-5">
                   <li v-for="listItem in block.items" :key="`${item.id}-${listItem.label || listItem.text}`">
-                    <strong v-if="listItem.label" class="font-semibold text-[#333]">{{ listItem.label }}: </strong>
+                    <strong v-if="listItem.label" class="font-semibold text-ink-900">{{ listItem.label }}: </strong>
                     <span>{{ listItem.text }}</span>
                   </li>
                 </ul>

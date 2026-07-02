@@ -1,4 +1,9 @@
 <script setup lang="ts">
+import homeBgUrl from '~/assets/image/home-bg.webp'
+import homeBannerUrl from '~/assets/image/home-banner.jpg'
+import homeIconMoblieUrl from '~/assets/image/home-icon-mobile.webp'
+import homeIconPcUrl from '~/assets/image/home-icon-desktop.webp'
+
 interface HomeProduct {
   name: string
   href: string
@@ -278,9 +283,9 @@ useReveal()
   <div class="bg-white">
     <section class="relative isolate min-h-[600px] overflow-hidden bg-[#eef5fb]">
       <img
-        src="https://verifiedpeptides.com/wp-content/uploads/2021/02/meshbackgroundfina11-280x280.jpg"
+        :src="homeBannerUrl"
         alt=""
-        class="absolute inset-0 size-full object-cover object-[70%_82%] opacity-40"
+        class="absolute inset-0 size-full object-cover object-[70%_82%]"
       >
       <video class="absolute inset-0 size-full object-cover opacity-35" preload="metadata" playsinline autoplay muted loop>
         <source src="https://verifiedpeptides.com/wp-content/uploads/2021/01/bgvid.mp4" type="video/mp4">
@@ -288,22 +293,22 @@ useReveal()
       <div class="absolute inset-0 bg-white/65" />
 
       <div class="relative mx-auto grid min-h-[600px] max-w-[1200px] items-center gap-8 px-4 py-8 sm:px-6 md:grid-cols-2 lg:px-8">
-        <div class="reveal text-left text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.55)]">
-          <div class="rounded bg-black/10 px-3 py-4 sm:px-4 sm:py-6 lg:max-w-[92%]">
-            <p class="text-[20px] font-medium uppercase leading-tight tracking-normal md:text-[25px]">
+        <div class="reveal text-left text-white">
+          <!-- <div class="rounded bg-black/10 px-3 py-4 sm:px-4 sm:py-6 lg:max-w-[92%]"> -->
+            <p class="text-[20px] font-medium uppercase leading-tight tracking-normal md:text-[25px] text-title-900">
               TRUSTED SINCE 2020
             </p>
-            <h1 class="mt-3 text-[38px] font-medium uppercase leading-[0.95] tracking-normal sm:text-[56px] lg:text-[72px]">
+            <h1 class="mt-3 text-[38px] font-medium uppercase leading-[0.95] tracking-normal sm:text-[56px] lg:text-[72px] text-brand-500!">
               VERIFIED PURE PEPTIDES
             </h1>
-            <p class="mt-4 text-[22px] font-medium uppercase leading-tight md:text-[30px]">
+            <p class="mt-4 text-[22px] font-medium uppercase leading-tight md:text-[30px] text-title-900">
               trusted by experts,<br>
               proven by labs
             </p>
-            <p class="mt-5 text-[18px] font-medium uppercase leading-tight md:text-[23px]">
+            <p class="mt-5 text-[18px] font-medium uppercase leading-tight md:text-[23px] text-title-900">
               FOR RESEARCH USE ONLY
             </p>
-          </div>
+          <!-- </div> -->
         </div>
 
         <div class="reveal flex justify-center md:justify-end">
@@ -320,15 +325,15 @@ useReveal()
       <div class="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8">
         <div class="mb-5 flex items-center gap-4">
           <span class="h-px flex-1 bg-line" aria-hidden="true" />
-          <h2 class="text-center text-[24px] font-medium text-ink-900 md:text-[28px]">Peptides</h2>
+          <h2 class="text-center text-[24px] font-medium text-title-900 md:text-[28px]">Peptides</h2>
           <span class="h-px flex-1 bg-line" aria-hidden="true" />
         </div>
 
-        <div class="-mx-4 flex snap-x gap-5 overflow-x-auto px-4 pb-5 md:grid md:grid-cols-3 md:overflow-visible md:pb-0 lg:grid-cols-4">
+        <div class="grid grid-cols-2 gap-x-5 gap-y-7 md:grid-cols-3 lg:grid-cols-4">
           <article
             v-for="product in featuredProducts"
             :key="product.name"
-            class="reveal min-w-[220px] snap-start md:min-w-0"
+            class="reveal"
           >
             <div class="vp-product-card bg-white text-center transition duration-200">
               <NuxtLink :to="product.href" class="vp-product-image block overflow-hidden bg-white">
@@ -336,13 +341,13 @@ useReveal()
               </NuxtLink>
               <div class="px-3 pb-4 pt-3">
                 <p class="mb-1 text-[11px] font-medium uppercase tracking-wide text-ink-700 opacity-80">Peptides</p>
-                <h3 class="min-h-[48px] text-[15px] font-medium leading-6 text-ink-900">
+                <h3 class="min-h-[40px] text-[13px] font-medium leading-5 text-ink-900 sm:min-h-[48px] sm:text-[15px] sm:leading-6">
                   <NuxtLink :to="product.href" class="hover:text-brand-600">{{ product.name }}</NuxtLink>
                 </h3>
-                <p class="mt-2 text-[15px] font-semibold text-ink-900">{{ product.price }}</p>
+                <p class="mt-2 text-[14px] font-semibold text-ink-900 sm:text-[15px]">{{ product.price }}</p>
                 <NuxtLink
                   :to="product.href"
-                  class="mt-3 inline-flex min-h-8 items-center justify-center rounded border border-brand-600 px-3 py-1.5 text-[11px] font-semibold uppercase text-brand-600 transition hover:bg-brand-600 hover:text-white"
+                  class="mt-3 inline-flex min-h-8 w-full items-center justify-center rounded border border-brand-600 px-2 py-1.5 text-[10px] font-semibold uppercase text-brand-600 transition hover:bg-brand-600 hover:text-white sm:w-auto sm:px-3 sm:text-[11px]"
                 >
                   {{ product.action }}
                 </NuxtLink>
@@ -355,18 +360,22 @@ useReveal()
 
     <section
       class="relative isolate overflow-hidden bg-[#0a2036] py-12 text-white md:py-16"
-      style="background-image: url('https://verifiedpeptides.com/wp-content/uploads/2024/02/bluemoleculefiled-scaled.jpg'); background-size: cover; background-position: center;"
+      :style="{
+        backgroundImage: `url(${homeBgUrl})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center'
+      }"
     >
       <div class="absolute inset-0 bg-black/40" />
       <div class="relative mx-auto grid max-w-[1200px] items-center gap-8 px-4 sm:px-6 md:grid-cols-[1fr_2fr] lg:px-8">
         <div class="reveal order-2 md:order-1">
           <img
-            src="https://verifiedpeptides.com/wp-content/uploads/2024/06/molecule-small-zoom.png"
+            :src="homeIconMoblieUrl"
             alt="molecule"
             class="mx-auto w-full max-w-[340px] object-contain md:hidden"
           >
           <img
-            src="https://verifiedpeptides.com/wp-content/uploads/2024/06/molecule-small-rotated1.png"
+            :src="homeIconPcUrl"
             alt="molecule"
             class="mx-auto hidden w-full max-w-[360px] object-contain md:block"
           >
@@ -387,7 +396,7 @@ useReveal()
               With over 500+ published lab reports since then, you can be sure we don&apos;t cut corners on testing every single batch of peptides.
               Every batch is analytically verified with HPLC to be up to the highest standards in purity, active weight content, and identity.
               Test results are publicly available for your viewing on the
-              <NuxtLink to="/reports" class="text-[#00ccff] hover:underline">Lab Tests</NuxtLink>
+              <NuxtLink to="/reports" class="text-brand-600 hover:underline">Lab Tests</NuxtLink>
               page, and each report can be verified authentic with the testing lab.
             </p>
           </div>
@@ -414,14 +423,14 @@ useReveal()
       <div class="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8">
         <div class="mb-6 flex items-center gap-4">
           <span class="h-px flex-1 bg-line" aria-hidden="true" />
-          <h2 class="text-center text-[30px] font-medium uppercase text-ink-900 md:text-[36px]">PEPTIDE CATALOG</h2>
+          <h2 class="text-center text-[30px] font-medium uppercase text-title-900 md:text-[36px]">PEPTIDE CATALOG</h2>
           <span class="h-px flex-1 bg-line" aria-hidden="true" />
         </div>
 
         <div v-for="section in catalogSections" :key="section.title" class="mb-10 last:mb-0">
           <div class="mb-5 flex items-center gap-4">
             <span class="h-px flex-1 bg-line" aria-hidden="true" />
-            <h3 class="text-[24px] font-medium text-ink-900">{{ section.title }}</h3>
+            <h3 class="text-[24px] font-medium text-title-900">{{ section.title }}</h3>
             <span class="h-px flex-1 bg-line" aria-hidden="true" />
           </div>
 
@@ -454,7 +463,7 @@ useReveal()
     <section class="bg-[#f5f9fd] py-12">
       <div class="mx-auto grid max-w-[1200px] gap-6 px-4 sm:px-6 md:grid-cols-[1fr_auto] md:items-center lg:px-8">
         <div class="reveal">
-          <h2 class="text-[28px] font-medium text-ink-900">Stay updated on lab reports and product releases</h2>
+          <h2 class="text-[28px] font-medium text-title-900">Stay updated on lab reports and product releases</h2>
           <p class="mt-3 max-w-2xl leading-7 text-ink-700">
             Submit your email to receive new product, certificate, and test report notices.
           </p>

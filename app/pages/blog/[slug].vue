@@ -64,7 +64,7 @@ useReveal()
 </script>
 
 <template>
-  <div class="bg-white text-[#242424]">
+  <div class="bg-white text-ink-900">
     <section class="bg-[#1f2933] py-12 text-center text-white lg:py-16">
       <div class="mx-auto max-w-[1222px] px-4 sm:px-6 lg:px-8">
         <NuxtLink
@@ -91,13 +91,13 @@ useReveal()
       <aside class="reveal lg:sticky lg:top-[118px] lg:self-start">
         <nav id="blog-table" class="border border-[#e8edf2] bg-white shadow-[0_1px_8px_rgba(0,0,0,0.08)]" aria-label="Table of Contents">
           <div class="border-b border-[#e8edf2] px-5 py-4">
-            <h2 class="text-[18px] font-semibold text-[#222]">
+            <h2 class="text-[18px] font-semibold text-title-900">
               Table of Contents
             </h2>
           </div>
           <ol class="space-y-1 px-5 py-4 text-[14px] leading-6">
             <li v-for="heading in headings" :key="heading.id" :class="heading.level === 3 ? 'pl-4' : ''">
-              <a :href="`#${heading.id}`" class="block rounded px-2 py-1 text-[#555] transition hover:bg-brand-50 hover:text-brand-600">
+              <a :href="`#${heading.id}`" class="block rounded px-2 py-1 text-ink-700 transition hover:bg-brand-50 hover:text-brand-600">
                 {{ heading.text }}
               </a>
             </li>
@@ -110,7 +110,7 @@ useReveal()
         <div class="blog-content" v-html="currentPost.contentHtml" />
 
         <div class="mt-10 flex items-center gap-3 border-t border-[#e8edf2] pt-6">
-          <span class="text-[13px] font-semibold uppercase text-[#777]">Share</span>
+          <span class="text-[13px] font-semibold uppercase text-ink-700">Share</span>
           <a
             v-for="item in shareLinks"
             :key="item.label"
@@ -143,10 +143,10 @@ useReveal()
             class="mx-auto size-16 object-contain"
             loading="lazy"
           >
-          <h2 class="mt-4 text-[28px] font-semibold text-[#222]">
+          <h2 class="mt-4 text-[28px] font-semibold text-title-900">
             Get a Free Quote Today
           </h2>
-          <p class="mx-auto mt-3 max-w-xl text-[15px] leading-7 text-[#555]">
+          <p class="mx-auto mt-3 max-w-xl text-[15px] leading-7 text-ink-700">
             Looking for custom peptides or bulk orders? Our team is ready to help - request a free quotation now!
           </p>
           <NuxtLink
@@ -158,7 +158,7 @@ useReveal()
         </section> -->
 
         <section class="mt-12">
-          <h2 class="text-center text-[28px] font-semibold lowercase text-[#222]">
+          <h2 class="text-center text-[28px] font-semibold lowercase text-title-900">
             view related content
           </h2>
           <div class="mt-7 grid gap-5 md:grid-cols-3">
@@ -171,7 +171,7 @@ useReveal()
               <time :datetime="item.publishedAt" class="text-[12px] font-semibold uppercase text-brand-600">
                 {{ item.month }} {{ item.day }}
               </time>
-              <h3 class="mt-3 text-[16px] font-semibold leading-6 text-[#222]">
+              <h3 class="mt-3 text-[16px] font-semibold leading-6 text-title-900">
                 {{ item.title }}
               </h3>
             </NuxtLink>
@@ -184,7 +184,7 @@ useReveal()
 
 <style scoped>
 .blog-content {
-  color: #555;
+  color: var(--color-ink-700);
   font-size: 16px;
   line-height: 1.8;
 }
@@ -196,7 +196,7 @@ useReveal()
 .blog-content :deep(h2) {
   scroll-margin-top: 130px;
   margin: 34px 0 16px;
-  color: #222;
+  color: var(--color-title-900);
   font-size: 30px;
   font-weight: 600;
   line-height: 1.25;
@@ -205,7 +205,7 @@ useReveal()
 .blog-content :deep(h3) {
   scroll-margin-top: 130px;
   margin: 28px 0 14px;
-  color: #222;
+  color: var(--color-title-900);
   font-size: 24px;
   font-weight: 600;
   line-height: 1.3;
@@ -250,7 +250,7 @@ useReveal()
 
 .blog-content :deep(th) {
   background: #f8fafc;
-  color: #222;
+  color: var(--color-title-900);
   font-weight: 600;
 }
 
